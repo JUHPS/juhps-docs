@@ -1,0 +1,47 @@
+{
+    "output": "docs",
+    "title": "High Performance Web Server manual",
+    "description": "The manual of High Performance Web Server",
+    "links": {
+        "sidebar": {
+            "GitHub": "http://github.com/JUHPS"
+        },
+        "sharing": {
+            "google": false,
+            "facebook": false,
+            "twitter": false,
+            "weibo": false,
+            "all": null
+        }
+    },
+    "plugins": [
+        "insert-logo",
+        "favicon",
+        "-lunr",
+        "-search",
+        "search-pro",
+        "splitter",
+        "github",
+        "-copy-code-button",
+        "code",
+        "toggle-chapters"
+    ],
+    "pluginsConfig": {
+        "insert-logo": {
+            "url": "https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true",
+            "style": "background: none; max-height: 100px; min-height: 30px"
+        },
+        "favicon": {
+            "shortcut": "/img/favicon.png",
+            "bookmark": "/img/favicon.png",
+            "appleTouch": "/img/favicon.png",
+            "appleTouchMore": {
+                "120x120": "/img/favicon.png",
+                "180x180": "/img/favicon.png"
+            }
+        },
+        "github": {
+            "url": "https://github.com/JUHPS"
+        }
+    }
+}
