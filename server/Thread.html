@@ -351,8 +351,8 @@
 <blockquote>
 <p>&#x63D0;&#x4F9B;&#x7EBF;&#x7A0B;&#x7C7B;&#x548C;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7C7B;&#xFF0C;&#x57FA;&#x4E8E;pthread&#x7EBF;&#x7A0B;&#x5E93;&#x5B9E;&#x73B0;&#x3002;</p>
 </blockquote>
-<h2 id="&#x7EBF;&#x7A0B;&#x7C7B;">&#x7EBF;&#x7A0B;&#x7C7B;</h2>
-<h3 id="thread">Thread</h3>
+<h2 id="1-&#x7EBF;&#x7A0B;&#x7C7B;">1. &#x7EBF;&#x7A0B;&#x7C7B;</h2>
+<h3 id="11-thread">1.1 Thread</h3>
 <blockquote>
 <p>&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x5165;&#x7EBF;&#x7A0B;&#x5165;&#x53E3;&#x51FD;&#x6570;&#x548C;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#xFF0C;&#x7EBF;&#x7A0B;&#x5165;&#x53E3;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#x4E3A;void()&#xFF0C;&#x5982;&#x679C;&#x5E26;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x7528;std::bind&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#x3002;&#x7EBF;&#x7A0B;&#x7C7B;&#x6784;&#x9020;&#x4E4B;&#x540E;&#x7EBF;&#x7A0B;&#x5373;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5728;&#x7EBF;&#x7A0B;&#x771F;&#x6B63;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#x8FD4;&#x56DE;&#x3002;</p>
 </blockquote>
@@ -431,8 +431,8 @@ Thread* Thread::GetThis() {
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
 </code></pre>
-<h2 id="&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7C7B;">&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7C7B;</h2>
-<h3 id="semaphore">Semaphore</h3>
+<h2 id="2-&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7C7B;">2. &#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7C7B;</h2>
+<h3 id="21-semaphore">2.1 Semaphore</h3>
 <blockquote>
 <p>&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;&#xFF0C;&#x57FA;&#x4E8E;sem_t&#x5B9E;&#x73B0;</p>
 </blockquote>
@@ -455,27 +455,27 @@ Thread* Thread::GetThis() {
     <span class="hljs-keyword">sem_t</span> m_semaphere;
 };
 </code></pre>
-<h3 id="mutex">Mutex</h3>
+<h3 id="22-mutex">2.2 Mutex</h3>
 <blockquote>
 <p>&#x4E92;&#x65A5;&#x9501;&#xFF0C;&#x57FA;&#x4E8E;pthread_mutex_t&#x5B9E;&#x73B0;</p>
 </blockquote>
-<h3 id="rwmutex">RWMutex</h3>
+<h3 id="23-rwmutex">2.3 RWMutex</h3>
 <blockquote>
 <p>&#x8BFB;&#x5199;&#x9501;&#xFF0C;&#x57FA;&#x4E8E;pthread_rwlock_t&#x5B9E;&#x73B0;</p>
 </blockquote>
-<h3 id="spinlock">Spinlock</h3>
+<h3 id="24-spinlock">2.4 Spinlock</h3>
 <blockquote>
 <p>&#x81EA;&#x65CB;&#x9501;&#xFF0C;&#x57FA;&#x4E8E;pthread_spinlock_t&#x5B9E;&#x73B0;</p>
 </blockquote>
-<h3 id="caslock">CASLock</h3>
+<h3 id="25-caslock">2.5 CASLock</h3>
 <blockquote>
 <p>&#x539F;&#x5B50;&#x9501;&#xFF0C;&#x57FA;&#x4E8E;std::atomic_flag&#x5B9E;&#x73B0;</p>
 </blockquote>
-<h3 id="scopedlockimpl">ScopedLockImpl</h3>
+<h3 id="26-scopedlockimpl">2.6 ScopedLockImpl</h3>
 <blockquote>
 <p>&#x9501;&#x7684;&#x7EDF;&#x4E00;&#x6A21;&#x7248;&#x5C01;&#x88C5;&#xFF0C;&#x5BF9;&#x6240;&#x6709;&#x9501;&#x7C7B;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6362;&#x9501;&#xFF0C;&#x76F4;&#x63A5;&#x66FF;&#x6362;&#x76F8;&#x5E94;&#x5173;&#x952E;&#x5B57;&#x5373;&#x53EF;&#x3002;</p>
 </blockquote>
-<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<h2 id="3-&#x603B;&#x7ED3;">3. &#x603B;&#x7ED3;</h2>
 <p>&#x5728;&#x65E5;&#x5FD7;&#x7CFB;&#x7EDF;&#x4E0E;&#x914D;&#x7F6E;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x91CF;&#x662F;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x56E0;&#x4E3A;&#x65E5;&#x5FD7;&#x7CFB;&#x7EDF;&#x5199;&#x591A;&#x8BFB;&#x5C11;&#x6240;&#x4EE5;&#x4F7F;&#x7528;<code>Mutex</code>&#xFF0C;&#x4F46;&#x6709;&#x6027;&#x80FD;&#x8981;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x662F;<code>Spinlock</code>,&#x5728;&#x914D;&#x7F6E;&#x7CFB;&#x7EDF;&#x4E2D;&#x662F;&#x8BFB;&#x591A;&#x5199;&#x5C11;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x8BFB;&#x5199;&#x9501;<code>RWmutex</code>&#x3002;&#x901F;&#x5EA6;&#x5927;&#x6982;&#x5728;&#x6BCF;&#x79D2;25M&#x5DE6;&#x53F3;&#x3002;</p>
 <p>&#x5728;&#x6240;&#x6709;&#x9700;&#x8981;&#x8BFB;&#x53D6;/&#x66F4;&#x6539;&#x6570;&#x636E;&#x7684;&#x5730;&#x65B9;&#x90FD;&#x8981;&#x52A0;&#x9501;&#x3002;</p>
 
@@ -518,7 +518,7 @@ Thread* Thread::GetThis() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"线程模块","level":"1.5.3","depth":2,"previous":{"title":"配置模块","level":"1.5.2","depth":2,"path":"server/Config.md","ref":"server/Config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":true,"favicon":"./img/favicon.png","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"./img/favicon.png","target":"_blank","title":"flexible-linkcard"},"logo":"./img/favicon.png","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{"url":"https://github.com/JUHPS/juhps-docs/","target":"_blank","name":"JUHPS"}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"server/Thread.md","mtime":"2023-01-16T06:31:58.416Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-16T07:13:15.427Z"},"basePath":"..","book":{"language":""}})
+            gitbook.page.hasChanged({"page":{"title":"线程模块","level":"1.5.3","depth":2,"previous":{"title":"配置模块","level":"1.5.2","depth":2,"path":"server/Config.md","ref":"server/Config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":true,"favicon":"./img/favicon.png","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"./img/favicon.png","target":"_blank","title":"flexible-linkcard"},"logo":"./img/favicon.png","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{"url":"https://github.com/JUHPS/juhps-docs/","target":"_blank","name":"JUHPS"}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"server/Thread.md","mtime":"2023-01-16T14:00:01.233Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-16T14:52:09.320Z"},"basePath":"..","book":{"language":""}})
         });
     </script>
 </div>
