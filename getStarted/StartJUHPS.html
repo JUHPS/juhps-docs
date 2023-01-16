@@ -33,7 +33,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
                 
@@ -42,6 +42,10 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-hqbook/theme.css">
                 
             
         
@@ -101,16 +105,34 @@
     <body>
         
 <div class="book">
-    <div class="book-summary">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="" alt="logo">
+        </div>
+        <span class="title"></span>
+
+        <!-- Search -->
         
-            
 <div id="book-search-input" role="search">
     <input type="text" placeholder="Type to search" />
 </div>
 
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="https://github.com/JUHPS/juhps-docs/" target="_blank">JUHPS</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <!--<div class="book-summary-title">文档目录</div>-->
+        
+        
+        <nav role="navigation">
             
-                <nav role="navigation">
-                
 
 
 <ul class="summary">
@@ -287,16 +309,24 @@
 </ul>
 
 
-                </nav>
-            
+        </nav>
         
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <!--<div class="book-anchor-title">在这篇文章中:</div>-->
+        <div class="book-anchor-body">
+
+        </div>
     </div>
 
     <div class="book-body">
         
-            <div class="body-inner">
-                
-                    
+        <div class="body-inner">
+            
+            
 
 <div class="book-header" role="navigation">
     
@@ -311,18 +341,18 @@
 
 
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
 <div id="book-search-results">
     <div class="search-noresults">
     
-                                <section class="normal markdown-section">
-                                
-                                
-                                
-                                </section>
-                            
+                    <section class="normal markdown-section">
+                        
+                        
+                        
+                    </section>
+                    
     </div>
     <div class="search-results">
         <div class="has-results">
@@ -339,30 +369,33 @@
     </div>
 </div>
 
-                        </div>
-                    </div>
-                
+                </div>
             </div>
+            
+        </div>
 
-            
-                
-                <a href="Prepare.html" class="navigation navigation-prev " aria-label="Previous page: 准备工作">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="../server/README.md" class="navigation navigation-next " aria-label="Next page: 服务器">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
+        
+        
+        <a href="Prepare.html"
+           class="navigation navigation-prev "
+           aria-label="Previous page: 准备工作">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="../server/README.md"
+           class="navigation navigation-next "
+           aria-label="Next page: 服务器">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
         
     </div>
-
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"启动系统","level":"1.4.2","depth":2,"next":{"title":"服务器","level":"1.5","depth":1,"path":"server/README.md","ref":"server/README.md","articles":[{"title":"日志模块","level":"1.5.1","depth":2,"path":"server/Logger.md","ref":"server/Logger.md","articles":[]},{"title":"配置模块","level":"1.5.2","depth":2,"path":"server/Config.md","ref":"server/Config.md","articles":[]},{"title":"线程模块","level":"1.5.3","depth":2,"path":"server/Thread.md","ref":"server/Thread.md","articles":[]}]},"previous":{"title":"准备工作","level":"1.4.1","depth":2,"path":"getStarted/Prepare.md","ref":"getStarted/Prepare.md","articles":[]},"dir":"neutral"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","toggle-chapters","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"getStarted/StartJUHPS.md","mtime":"2023-01-15T11:11:35.668Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-15T14:47:47.444Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"启动系统","level":"1.4.2","depth":2,"next":{"title":"服务器","level":"1.5","depth":1,"path":"server/README.md","ref":"server/README.md","articles":[{"title":"日志模块","level":"1.5.1","depth":2,"path":"server/Logger.md","ref":"server/Logger.md","articles":[]},{"title":"配置模块","level":"1.5.2","depth":2,"path":"server/Config.md","ref":"server/Config.md","articles":[]},{"title":"线程模块","level":"1.5.3","depth":2,"path":"server/Thread.md","ref":"server/Thread.md","articles":[]}]},"previous":{"title":"准备工作","level":"1.4.1","depth":2,"path":"getStarted/Prepare.md","ref":"getStarted/Prepare.md","articles":[]},"dir":"neutral"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":true,"favicon":"./img/favicon.png","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"./img/favicon.png","target":"_blank","title":"flexible-linkcard"},"logo":"./img/favicon.png","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{"url":"https://github.com/JUHPS/juhps-docs/","target":"_blank","name":"JUHPS"}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"getStarted/StartJUHPS.md","mtime":"2023-01-15T11:11:35.668Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-16T07:13:15.427Z"},"basePath":"..","book":{"language":""}})
         });
     </script>
 </div>
@@ -396,7 +429,7 @@
         
     
         
-        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
         
     
         
@@ -409,6 +442,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-hqbook/theme.js"></script>
         
     
 

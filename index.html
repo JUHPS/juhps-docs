@@ -33,7 +33,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
                 
@@ -42,6 +42,10 @@
             
                 
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-hqbook/theme.css">
                 
             
         
@@ -99,16 +103,34 @@
     <body>
         
 <div class="book">
-    <div class="book-summary">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="" alt="logo">
+        </div>
+        <span class="title"></span>
+
+        <!-- Search -->
         
-            
 <div id="book-search-input" role="search">
     <input type="text" placeholder="Type to search" />
 </div>
 
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="https://github.com/JUHPS/juhps-docs/" target="_blank">JUHPS</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <!--<div class="book-summary-title">文档目录</div>-->
+        
+        
+        <nav role="navigation">
             
-                <nav role="navigation">
-                
 
 
 <ul class="summary">
@@ -285,16 +307,24 @@
 </ul>
 
 
-                </nav>
-            
+        </nav>
         
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <!--<div class="book-anchor-title">在这篇文章中:</div>-->
+        <div class="book-anchor-body">
+
+        </div>
     </div>
 
     <div class="book-body">
         
-            <div class="body-inner">
-                
-                    
+        <div class="body-inner">
+            
+            
 
 <div class="book-header" role="navigation">
     
@@ -309,15 +339,15 @@
 
 
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
 <div id="book-search-results">
     <div class="search-noresults">
     
-                                <section class="normal markdown-section">
-                                
-                                <div align="center">
+                    <section class="normal markdown-section">
+                        
+                        <div align="center">
    <img src="https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true" alt="MEVCL">
    <br>
    <h1 id="high-performance-web-server-"> High Performance Web Server </h1>
@@ -327,9 +357,9 @@
 <h1 id="license">LICENSE</h1>
 <p>&#x672C;&#x9879;&#x76EE;&#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x5747;&#x4F7F;&#x7528;&#x57FA;&#x4E8E; GNU General Public License v3.0 &#x5F00;&#x6E90;&#x534F;&#x8BAE;&#x5F00;&#x6E90;&#xFF0C;&#x5E76;&#x9644;&#x52A0;&#x4E0B;&#x5217;&#x6761;&#x6B3E;&#x3002;&#x90E8;&#x5206;&#x884D;&#x751F;&#x9879;&#x76EE;&#x91C7;&#x7528; MIT License &#x5F00;&#x6E90;&#xFF0C;&#x4EE5;&#x76EE;&#x6807;&#x4ED3;&#x5E93;&#x5185;&#x7684; LICENSE &#x6587;&#x4EF6;&#x4E0E; README &#x8BF4;&#x660E;&#x4E3A;&#x51C6;</p>
 
-                                
-                                </section>
-                            
+                        
+                    </section>
+                    
     </div>
     <div class="search-results">
         <div class="has-results">
@@ -346,26 +376,27 @@
     </div>
 </div>
 
-                        </div>
-                    </div>
-                
+                </div>
             </div>
+            
+        </div>
 
-            
-                
-                
-                <a href="News.md" class="navigation navigation-next navigation-unique" aria-label="Next page: 更新说明">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
+        
+        
+        
+        <a href="News.md"
+           class="navigation navigation-next navigation-unique"
+           aria-label="Next page: 更新说明">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
         
     </div>
-
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"首页","level":"1.1","depth":1,"next":{"title":"更新说明","level":"1.2","depth":1,"path":"News.md","ref":"News.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","toggle-chapters","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"README.md","mtime":"2023-01-15T14:15:38.329Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-15T14:47:47.444Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"首页","level":"1.1","depth":1,"next":{"title":"更新说明","level":"1.2","depth":1,"path":"News.md","ref":"News.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":true,"favicon":"./img/favicon.png","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"./img/favicon.png","target":"_blank","title":"flexible-linkcard"},"logo":"./img/favicon.png","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{"url":"https://github.com/JUHPS/juhps-docs/","target":"_blank","name":"JUHPS"}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"README.md","mtime":"2023-01-15T14:15:38.329Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-16T07:13:15.427Z"},"basePath":".","book":{"language":""}})
         });
     </script>
 </div>
@@ -399,7 +430,7 @@
         
     
         
-        <script src="gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
         
     
         
@@ -412,6 +443,10 @@
     
         
         <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-hqbook/theme.js"></script>
         
     
 
