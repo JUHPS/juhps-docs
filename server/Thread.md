@@ -2,9 +2,9 @@
 
 > 提供线程类和线程同步类，基于pthread线程库实现。
 
-## 线程类
+## 1. 线程类
 
-### Thread
+### 1.1 Thread
 
 > 构造函数传入线程入口函数和线程名称，线程入口函数类型为void()，如果带参数，则需要用std::bind进行绑定。线程类构造之后线程即开始运行，构造函数在线程真正开始运行之后返回。
 
@@ -91,9 +91,9 @@ void* Thread::run(void* arg) {
 }
 ```
 
-## 线程同步类
+## 2. 线程同步类
 
-### Semaphore
+### 2.1 Semaphore
 
 > 计数信号量，基于sem_t实现
 
@@ -120,27 +120,27 @@ private:
 };
 ```
 
-### Mutex
+### 2.2 Mutex
 
 > 互斥锁，基于pthread_mutex_t实现
 
-### RWMutex
+### 2.3 RWMutex
 
 > 读写锁，基于pthread_rwlock_t实现
 
-### Spinlock
+### 2.4 Spinlock
 
 > 自旋锁，基于pthread_spinlock_t实现
 
-### CASLock
+### 2.5 CASLock
 
 > 原子锁，基于std::atomic_flag实现
 
-### ScopedLockImpl
+### 2.6 ScopedLockImpl
 
 > 锁的统一模版封装，对所有锁类统一使用，如果需要换锁，直接替换相应关键字即可。
 
-## 总结
+## 3. 总结
 
 在日志系统与配置系统使用互斥量是为了保证线程安全，因为日志系统写多读少所以使用`Mutex`，但有性能要求，所以使用的是`Spinlock`,在配置系统中是读多写少，所以使用的是读写锁`RWmutex`。速度大概在每秒25M左右。
 
