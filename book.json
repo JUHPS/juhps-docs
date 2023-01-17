@@ -31,9 +31,6 @@
         "themeHqbook":{
             "nav":[
                 {
-                    "url": "https://github.com/JUHPS/juhps-docs/",
-                    "target": "_blank",
-                    "name": "JUHPS"
                 }
             ]
         }
@@ -56,8 +53,8 @@
             "url": "https://github.com/JUHPS"
         },
         "theme-hqbook":{
-            "favicon": "./img/favicon.png",
-            "logo":"./img/favicon.png",
+            "favicon": "https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true",
+            "logo":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true",
             "search-placeholder":"输入关键字搜索",
             "copyButtons": true,
             "copyLines": true,
@@ -69,7 +66,7 @@
                 "title": "flexible-linkcard",
                 "hrefUrl": "https://github.com/JUHPS/juhps-docs/",
                 "target": "_blank",
-                "imgSrc": "./img/favicon.png",
+                "imgSrc": "https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true",
                 "imgClass": "rect"
             }
         }
