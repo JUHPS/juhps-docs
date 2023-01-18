@@ -58,7 +58,7 @@
             "search-placeholder":"输入关键字搜索",
             "copyButtons": true,
             "copyLines": true,
-            "dragSplitter": true,
+            "dragSplitter": false,
             "hide-elements": [
                 ".summary .gitbook-link"
             ],
