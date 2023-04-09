@@ -12,4 +12,4 @@
     * [协程模块](server/Fiber/README.md)
     * [协程调度模块](server/Scheduler/README.md)
     * [IO协程调度模块](server/IOManager/README.md)
-    * [协程调度模块](server/Timer/README.md)
+    * [定时器模块](server/Timer/README.md)
