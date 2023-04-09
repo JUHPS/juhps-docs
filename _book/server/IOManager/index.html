@@ -1,0 +1,566 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IO协程调度模块 · High Performance Web Server manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-hqbook/theme.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Timer/" />
+    
+    
+    <link rel="prev" href="../Scheduler/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../img/favicon.png' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../img/favicon.png' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../img/favicon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../img/favicon.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../img/favicon.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="" alt="logo">
+        </div>
+        <span class="title"></span>
+
+        <!-- Search -->
+        
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="" target=""></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <!--<div class="book-summary-title">文档目录</div>-->
+        
+        
+        <nav role="navigation">
+            
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://github.com/JUHPS" target="_blank" class="custom-link">GitHub</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Welcome.html">
+            
+                <a href="../../Welcome.html">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../getStarted/">
+            
+                <a href="../../getStarted/">
+            
+                    
+                    开始部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../getStarted/common/Prepare.html">
+            
+                <a href="../../getStarted/common/Prepare.html">
+            
+                    
+                    准备工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../getStarted/common/StartJUHPS.html">
+            
+                <a href="../../getStarted/common/StartJUHPS.html">
+            
+                    
+                    启动系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    服务器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Logger/">
+            
+                <a href="../Logger/">
+            
+                    
+                    日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Config/">
+            
+                <a href="../Config/">
+            
+                    
+                    配置模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Thread/">
+            
+                <a href="../Thread/">
+            
+                    
+                    线程模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Fiber/">
+            
+                <a href="../Fiber/">
+            
+                    
+                    协程模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Scheduler/">
+            
+                <a href="../Scheduler/">
+            
+                    
+                    协程调度模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    IO协程调度模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Timer/">
+            
+                <a href="../Timer/">
+            
+                    
+                    协程调度模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+        </nav>
+        
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <!--<div class="book-anchor-title">在这篇文章中:</div>-->
+        <div class="book-anchor-body">
+
+        </div>
+    </div>
+
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >IO协程调度模块</a>
+    </h1>
+</div>
+
+
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="io&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x5757;">IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x5757;</h1>
+<blockquote>
+<p>IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x89E3;&#x51B3;&#x4E86;&#x8C03;&#x5EA6;&#x5668;&#x5728;idle&#x72B6;&#x6001;&#x4E0B;&#x5FD9;&#x7B49;&#x5F85;&#x5BFC;&#x81F4;CPU&#x5360;&#x7528;&#x7387;&#x9AD8;&#x7684;&#x95EE;&#x9898;&#x3002;IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x4F7F;&#x7528;&#x4E00;&#x5BF9;&#x7BA1;&#x9053;fd&#x6765;tickle&#x8C03;&#x5EA6;&#x534F;&#x7A0B;&#xFF0C;&#x5F53;&#x8C03;&#x5EA6;&#x5668;&#x7A7A;&#x95F2;&#x65F6;&#xFF0C;idle&#x534F;&#x7A0B;&#x901A;&#x8FC7;epoll_wait&#x963B;&#x585E;&#x5728;&#x7BA1;&#x9053;&#x7684;&#x8BFB;&#x63CF;&#x8FF0;&#x7B26;&#x4E0A;&#xFF0C;&#x7B49;&#x7BA1;&#x9053;&#x7684;&#x53EF;&#x8BFB;&#x4E8B;&#x4EF6;&#x3002;&#x6DFB;&#x52A0;&#x65B0;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;tickle&#x65B9;&#x6CD5;&#x5199;&#x7BA1;&#x9053;&#xFF0C;idle&#x534F;&#x7A0B;&#x68C0;&#x6D4B;&#x5230;&#x7BA1;&#x9053;&#x53EF;&#x8BFB;&#x540E;&#x9000;&#x51FA;&#xFF0C;&#x8C03;&#x5EA6;&#x5668;&#x6267;&#x884C;&#x8C03;&#x5EA6;&#x3002;</p>
+</blockquote>
+<h2 id="1-&#x6A21;&#x5757;&#x8BBE;&#x8BA1;">1. &#x6A21;&#x5757;&#x8BBE;&#x8BA1;</h2>
+<p>IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x5757;&#x57FA;&#x4E8E;epoll&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x652F;&#x6301;Linux&#x5E73;&#x53F0;&#x3002;&#x5BF9;&#x6BCF;&#x4E2A;fd&#xFF0C;&#x652F;&#x6301;&#x4E24;&#x7C7B;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E00;&#x7C7B;&#x662F;&#x53EF;&#x8BFB;&#x4E8B;&#x4EF6;&#xFF0C;&#x5BF9;&#x5E94;EPOLLIN&#xFF0C;&#x4E00;&#x7C7B;&#x662F;&#x53EF;&#x5199;&#x4E8B;&#x4EF6;&#xFF0C;&#x5BF9;&#x5E94;EPOLLOUT&#xFF0C;&#x4E8B;&#x4EF6;&#x679A;&#x4E3E;&#x503C;&#x76F4;&#x63A5;&#x7EE7;&#x627F;&#x81EA;epoll&#x3002;</p>
+<p>&#x5F53;&#x7136;epoll&#x672C;&#x8EAB;&#x9664;&#x4E86;&#x652F;&#x6301;&#x4E86;EPOLLIN&#x548C;EPOLLOUT&#x4E24;&#x7C7B;&#x4E8B;&#x4EF6;&#x5916;&#xFF0C;&#x8FD8;&#x652F;&#x6301;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;EPOLLRDHUP, EPOLLERR, EPOLLHUP&#x7B49;&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#xFF0C;&#x505A;&#x6CD5;&#x662F;&#x5C06;&#x5176;&#x8FDB;&#x884C;&#x5F52;&#x7C7B;&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x5230;EPOLLIN&#x548C;EPOLLOUT&#x4E2D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6240;&#x6709;&#x7684;&#x4E8B;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E3A;&#x53EF;&#x8BFB;&#x6216;&#x53EF;&#x5199;&#x4E8B;&#x4EF6;&#xFF0C;&#x751A;&#x81F3;&#x6709;&#x7684;&#x4E8B;&#x4EF6;&#x8FD8;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x8868;&#x793A;&#x53EF;&#x8BFB;&#x53CA;&#x53EF;&#x5199;&#x4E8B;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;EPOLLERR&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#xFF0C;fd&#x5C06;&#x540C;&#x65F6;&#x89E6;&#x53D1;&#x53EF;&#x8BFB;&#x548C;&#x53EF;&#x5199;&#x4E8B;&#x4EF6;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;&#x6BCF;&#x6B21;&#x8C03;&#x5EA6;&#x90FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x4E09;&#x5143;&#x7EC4;&#x4FE1;&#x606F;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x63CF;&#x8FF0;&#x7B26;-&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#xFF08;&#x53EF;&#x8BFB;&#x6216;&#x53EF;&#x5199;&#xFF09;-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x8C03;&#x5EA6;&#x5668;&#x8BB0;&#x5F55;&#x5168;&#x90E8;&#x9700;&#x8981;&#x8C03;&#x5EA6;&#x7684;&#x4E09;&#x5143;&#x7EC4;&#x4FE1;&#x606F;&#xFF0C;&#x5176;&#x4E2D;&#x63CF;&#x8FF0;&#x7B26;&#x548C;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x7528;&#x4E8E;epoll_wait&#xFF0C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x3002;&#x8FD9;&#x4E2A;&#x4E09;&#x5143;&#x7EC4;&#x4FE1;&#x606F;&#x5728;&#x6E90;&#x7801;&#x4E0A;&#x901A;&#x8FC7;FdContext&#x7ED3;&#x6784;&#x4F53;&#x6765;&#x5B58;&#x50A8;&#xFF0C;&#x5728;&#x6267;&#x884C;epoll_wait&#x65F6;&#x901A;&#x8FC7;epoll_event&#x7684;&#x79C1;&#x6709;&#x6570;&#x636E;&#x6307;&#x9488;data.ptr&#x6765;&#x4FDD;&#x5B58;FdContext&#x7ED3;&#x6784;&#x4F53;&#x4FE1;&#x606F;&#x3002;</p>
+<p>IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x5728;idle&#x65F6;&#x4F1A;epoll_wait&#x6240;&#x6709;&#x6CE8;&#x518C;&#x7684;fd&#xFF0C;&#x5982;&#x679C;&#x6709;fd&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF0C;epoll_wait&#x8FD4;&#x56DE;&#xFF0C;&#x4ECE;&#x79C1;&#x6709;&#x6570;&#x636E;&#x4E2D;&#x62FF;&#x5230;fd&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x6267;&#x884C;&#x5176;&#x4E2D;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#xFF08;&#x5B9E;&#x9645;&#x662F;idle&#x534F;&#x7A0B;&#x53EA;&#x8D1F;&#x8D23;&#x6536;&#x96C6;&#x6240;&#x6709;&#x5DF2;&#x89E6;&#x53D1;&#x7684;fd&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5E76;&#x5C06;&#x5176;&#x52A0;&#x5165;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x6267;&#x884C;&#x65F6;&#x673A;&#x662F;idle&#x534F;&#x7A0B;&#x9000;&#x51FA;&#x540E;&#xFF0C;&#x8C03;&#x5EA6;&#x5668;&#x5728;&#x4E0B;&#x4E00;&#x8F6E;&#x8C03;&#x5EA6;&#x65F6;&#x6267;&#x884C;&#xFF09;</p>
+<p>&#x4E0E;&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x662F;&#xFF0C;IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x652F;&#x6301;&#x53D6;&#x6D88;&#x4E8B;&#x4EF6;&#x3002;&#x53D6;&#x6D88;&#x4E8B;&#x4EF6;&#x8868;&#x793A;&#x4E0D;&#x5173;&#x5FC3;&#x67D0;&#x4E2A;fd&#x7684;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;fd&#x7684;&#x53EF;&#x8BFB;&#x6216;&#x53EF;&#x5199;&#x4E8B;&#x4EF6;&#x90FD;&#x88AB;&#x53D6;&#x6D88;&#x4E86;&#xFF0C;&#x90A3;&#x8FD9;&#x4E2A;fd&#x4F1A;&#x4ECE;&#x8C03;&#x5EA6;&#x5668;&#x7684;epoll_wait&#x4E2D;&#x5220;&#x9664;&#x3002;</p>
+<h2 id="2-&#x6A21;&#x5757;&#x5B9E;&#x73B0;">2. &#x6A21;&#x5757;&#x5B9E;&#x73B0;</h2>
+<h3 id="21-iomanager">2.1 IOManager</h3>
+<blockquote>
+<p>IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;</p>
+</blockquote>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> IOManager : <span class="hljs-keyword">public</span> Scheduler {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;IOManager&gt; ptr;
+    <span class="hljs-keyword">typedef</span> RWMutex RWMutexType;
+...
+}
+</code></pre>
+<h3 id="22-&#x8BFB;&#x5199;&#x4E8B;&#x4EF6;">2.2 &#x8BFB;&#x5199;&#x4E8B;&#x4EF6;</h3>
+<blockquote>
+<p>IO&#x4E8B;&#x4EF6;&#xFF0C;&#x53EA;&#x5173;&#x5FC3;socket fd&#x7684;&#x8BFB;&#x548C;&#x5199;&#x4E8B;&#x4EF6;&#xFF0C;&#x5176;&#x4ED6;epoll&#x4E8B;&#x4EF6;&#x4F1A;&#x5F52;&#x7C7B;&#x5230;&#x8FD9;&#x4E24;&#x7C7B;&#x4E8B;&#x4EF6;&#x4E2D;</p>
+</blockquote>
+<pre><code class="lang-C++"><span class="hljs-keyword">enum</span> Event {
+    <span class="hljs-comment">/// &#x65E0;&#x4E8B;&#x4EF6;</span>
+    NONE = <span class="hljs-number">0x0</span>,
+    <span class="hljs-comment">/// &#x8BFB;&#x4E8B;&#x4EF6;(EPOLLIN)</span>
+    READ = <span class="hljs-number">0x1</span>,
+    <span class="hljs-comment">/// &#x5199;&#x4E8B;&#x4EF6;(EPOLLOUT)</span>
+    WRITE = <span class="hljs-number">0x4</span>,
+};
+</code></pre>
+<h3 id="23-&#x4E09;&#x5143;&#x7EC4;">2.3 &#x4E09;&#x5143;&#x7EC4;</h3>
+<blockquote>
+<p>&#x63CF;&#x8FF0;&#x7B26;-&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E09;&#x5143;&#x7EC4;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E09;&#x5143;&#x7EC4;&#x4E5F;&#x79F0;&#x4E3A;fd&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;FdContext&#x6765;&#x8868;&#x793A;&#x3002;&#x7531;&#x4E8E;fd&#x6709;&#x53EF;&#x8BFB;&#x548C;&#x53EF;&#x5199;&#x4E24;&#x79CD;&#x4E8B;&#x4EF6;&#xFF0C;&#x6BCF;&#x79CD;&#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x4E2A;fd&#x90FD;&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x4E24;&#x4E2A;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7EC4;&#x5408;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-C++"><span class="hljs-keyword">struct</span> FdContext {
+    <span class="hljs-keyword">typedef</span> Mutex MutexType;
+    <span class="hljs-keyword">struct</span> EventContext {
+        Scheduler *scheduler = <span class="hljs-literal">nullptr</span>;
+        Fiber::ptr fiber;
+        <span class="hljs-built_in">std</span>::function&lt;<span class="hljs-keyword">void</span>()&gt; cb;
+    };
+
+    <span class="hljs-function">EventContext &amp;<span class="hljs-title">getEventContext</span><span class="hljs-params">(Event event)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">resetEventContext</span><span class="hljs-params">(EventContext &amp;ctx)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">triggerEvent</span><span class="hljs-params">(Event event)</span></span>;
+
+    EventContext read;
+    EventContext write;
+    <span class="hljs-keyword">int</span> fd = <span class="hljs-number">0</span>;
+    Event events = NONE;
+    MutexType mutex;
+</code></pre>
+<h3 id="24-&#x4E8B;&#x4EF6;&#x5904;&#x7406;">2.4 &#x4E8B;&#x4EF6;&#x5904;&#x7406;</h3>
+<ul>
+<li>&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;addEvent</li>
+<li>&#x5220;&#x9664;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;delEvent</li>
+<li>&#x53D6;&#x6D88;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;cancelEvent</li>
+<li>&#x4EE5;&#x53CA;&#x53D6;&#x6D88;&#x5168;&#x90E8;&#x4E8B;&#x4EF6;cancelAll</li>
+</ul>
+<h2 id="3-&#x603B;&#x7ED3;">3. &#x603B;&#x7ED3;</h2>
+<ol>
+<li>IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x5757;&#x53EF;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x5BF9;&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x6539;&#x9020;&#xFF0C;&#x5C06;epoll&#x4E0E;&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x878D;&#x5408;&#xFF0C;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;tickle&#x548C;idle&#xFF0C;&#x5E76;&#x4FDD;&#x8BC1;&#x539F;&#x6709;&#x7684;&#x529F;&#x80FD;&#x4E0D;&#x53D8;&#x3002;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x662F;&#x57FA;&#x4E8E;epoll&#x5B9E;&#x73B0;IO&#x4E8B;&#x4EF6;&#x7684;&#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664;&#x3001;&#x8C03;&#x5EA6;&#x3001;&#x53D6;&#x6D88;&#x7B49;&#x529F;&#x80FD;&#x3002;</li>
+<li>IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5173;&#x6CE8;&#x7684;&#x662F;FdContext&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x63CF;&#x8FF0;&#x7B26;-&#x4E8B;&#x4EF6;-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E09;&#x5143;&#x7EC4;&#xFF0C;IOManager&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x6240;&#x6709;&#x5173;&#x6CE8;&#x7684;&#x4E09;&#x5143;&#x7EC4;&#xFF0C;&#x5E76;&#x4E14;&#x5728;epoll_wait&#x68C0;&#x6D4B;&#x5230;&#x63CF;&#x8FF0;&#x7B26;&#x4E8B;&#x4EF6;&#x5C31;&#x7EEA;&#x65F6;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</li>
+<li>FdContext&#x7684;&#x5BFB;&#x5740;&#x95EE;&#x9898;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;fd&#x7684;&#x503C;&#x4F5C;&#x4E3A;FdContext&#x6570;&#x7EC4;&#x7684;&#x4E0B;&#x6807;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x627E;&#x5230;&#x4E00;&#x4E2A;fd&#x5BF9;&#x5E94;&#x7684;FdContext&#x3002;&#x7531;&#x4E8E;&#x5173;&#x95ED;&#x7684;fd&#x4F1A;&#x88AB;&#x91CD;&#x590D;&#x5229;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x4E5F;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;FdContext&#x6570;&#x7EC4;&#x81A8;&#x80C0;&#x592A;&#x5FEB;&#xFF0C;&#x6216;&#x662F;&#x5229;&#x7528;&#x7387;&#x4F4E;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+<li>IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x9000;&#x51FA;&#xFF0C;&#x4E0D;&#x4F46;&#x6240;&#x6709;&#x534F;&#x7A0B;&#x8981;&#x5B8C;&#x6210;&#x8C03;&#x5EA6;&#xFF0C;&#x6240;&#x6709;IO&#x4E8B;&#x4EF6;&#x4E5F;&#x8981;&#x5B8C;&#x6210;&#x8C03;&#x5EA6;&#x3002;</li>
+</ol>
+
+                        
+                    </section>
+                    
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+        <a href="../Scheduler/"
+           class="navigation navigation-prev "
+           aria-label="Previous page: 协程调度模块">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="../Timer/"
+           class="navigation navigation-next "
+           aria-label="Next page: 协程调度模块">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IO协程调度模块","level":"1.4.6","depth":2,"next":{"title":"协程调度模块","level":"1.4.7","depth":2,"path":"server/Timer/README.md","ref":"server/Timer/README.md","articles":[]},"previous":{"title":"协程调度模块","level":"1.4.5","depth":2,"path":"server/Scheduler/README.md","ref":"server/Scheduler/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":false,"favicon":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","target":"_blank","title":"flexible-linkcard"},"logo":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"server/IOManager/README.md","mtime":"2023-04-09T07:56:49.055Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-09T08:00:54.763Z"},"basePath":"../..","book":{"language":""}})
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-hqbook/theme.js"></script>
+        
+    
+
+    </body>
+</html>
+
