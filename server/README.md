@@ -11,4 +11,5 @@
 | [Hook模块](./Hook/README.md) | \ | \ |
 | \ | \ | [网络地址模块](./Address/README.md) |
 | \ | \ | [Socket模块](./Socket/README.md) |
-| \ | \ | [ByteArray序列化模块](./ByteArray/README.md) |
+| [ByteArray序列化模块](./ByteArray/README.md) | \ | \ |
+| \ | \ | [字节流模块](./Stream/README.md) |
