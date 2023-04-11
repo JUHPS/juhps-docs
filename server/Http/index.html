@@ -1,0 +1,811 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Http模块 · High Performance Web Server manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-hqbook/theme.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../TcpServer/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../img/favicon.png' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../img/favicon.png' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../img/favicon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../img/favicon.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../img/favicon.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="" alt="logo">
+        </div>
+        <span class="title"></span>
+
+        <!-- Search -->
+        
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="" target=""></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <!--<div class="book-summary-title">文档目录</div>-->
+        
+        
+        <nav role="navigation">
+            
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://github.com/JUHPS" target="_blank" class="custom-link">GitHub</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Welcome.html">
+            
+                <a href="../../Welcome.html">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../getStarted/">
+            
+                <a href="../../getStarted/">
+            
+                    
+                    开始部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../getStarted/common/Prepare.html">
+            
+                <a href="../../getStarted/common/Prepare.html">
+            
+                    
+                    准备工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../getStarted/common/StartJUHPS.html">
+            
+                <a href="../../getStarted/common/StartJUHPS.html">
+            
+                    
+                    启动系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    服务器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Logger/">
+            
+                <a href="../Logger/">
+            
+                    
+                    日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Env/">
+            
+                <a href="../Env/">
+            
+                    
+                    环境变量模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Config/">
+            
+                <a href="../Config/">
+            
+                    
+                    配置模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Thread/">
+            
+                <a href="../Thread/">
+            
+                    
+                    线程模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Fiber/">
+            
+                <a href="../Fiber/">
+            
+                    
+                    协程模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Scheduler/">
+            
+                <a href="../Scheduler/">
+            
+                    
+                    协程调度模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../IOManager/">
+            
+                <a href="../IOManager/">
+            
+                    
+                    IO协程调度模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../Timer/">
+            
+                <a href="../Timer/">
+            
+                    
+                    定时器模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../Hook/">
+            
+                <a href="../Hook/">
+            
+                    
+                    Hook模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../Address/">
+            
+                <a href="../Address/">
+            
+                    
+                    网络地址模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../Socket/">
+            
+                <a href="../Socket/">
+            
+                    
+                    Socket模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../ByteArray/">
+            
+                <a href="../ByteArray/">
+            
+                    
+                    ByteArray序列化模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../Stream/">
+            
+                <a href="../Stream/">
+            
+                    
+                    字节流序列化模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../TcpServer/">
+            
+                <a href="../TcpServer/">
+            
+                    
+                    TcpServer模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.15" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Http模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+        </nav>
+        
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <!--<div class="book-anchor-title">在这篇文章中:</div>-->
+        <div class="book-anchor-body">
+
+        </div>
+    </div>
+
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Http模块</a>
+    </h1>
+</div>
+
+
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="http&#x6A21;&#x5757;">Http&#x6A21;&#x5757;</h1>
+<blockquote>
+<p>&#x63D0;&#x4F9B;Http&#x670D;&#x52A1;</p>
+</blockquote>
+<h1 id="1-&#x6A21;&#x5757;&#x8BBE;&#x8BA1;">1. &#x6A21;&#x5757;&#x8BBE;&#x8BA1;</h1>
+<p>&#x91C7;&#x7528;Ragel&#xFF08;&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x6027;&#x80FD;&#x5AB2;&#x7F8E;&#x6C47;&#x7F16;&#xFF09;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;HTTP/1.1&#x7684;&#x7B80;&#x5355;&#x534F;&#x8BAE;&#x5B9E;&#x73B0;&#x548C;uri&#x7684;&#x89E3;&#x6790;&#x3002;&#x57FA;&#x4E8E;SocketStream&#x5B9E;&#x73B0;&#x4E86;HttpConnection(HTTP&#x7684;&#x5BA2;&#x6237;&#x7AEF;)&#x548C;HttpSession&#xFF08;HTTP&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x94FE;&#x63A5;&#xFF09;&#x3002;&#x57FA;&#x4E8E;TcpServer&#x5B9E;&#x73B0;&#x4E86;HttpServer&#x3002;&#x63D0;&#x4F9B;&#x4E86;&#x5B8C;&#x6574;&#x7684;HTTP&#x7684;&#x5BA2;&#x6237;&#x7AEF;API&#x8BF7;&#x6C42;&#x529F;&#x80FD;&#xFF0C;HTTP&#x57FA;&#x7840;API&#x670D;&#x52A1;&#x5668;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6A21;&#x5757;&#xFF1A;</p>
+<ul>
+<li>HTTP&#x5E38;&#x91CF;&#x5B9A;&#x4E49;&#xFF0C;&#x5305;&#x62EC;HTTP&#x65B9;&#x6CD5;HttpMethod&#x4E0E;HTTP&#x72B6;&#x6001;HttpStatus&#x3002;</li>
+<li>HTTP&#x8BF7;&#x6C42;&#x4E0E;&#x54CD;&#x5E94;&#x7ED3;&#x6784;&#xFF0C;&#x5BF9;&#x5E94;HttpRequest&#x548C;HttpResponse&#x3002;</li>
+<li>HTTP&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x5305;&#x542B;HTTP&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#x5668;&#x4E0E;HTTP&#x54CD;&#x5E94;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x5BF9;&#x5E94;HttpRequestParser&#x548C;HttpResponseParser&#x3002;</li>
+<li>HTTP&#x4F1A;&#x8BDD;&#x7ED3;&#x6784;&#xFF0C;&#x5BF9;&#x5E94;HttpSession&#x3002;</li>
+<li>HTTP&#x670D;&#x52A1;&#x5668;&#x3002;</li>
+<li>HTTP Servlet&#x3002;</li>
+<li>HTTP&#x5BA2;&#x6237;&#x7AEF;HttpConnection&#xFF0C;&#x7528;&#x4E8E;&#x53D1;&#x8D77;GET/POST&#x7B49;&#x8BF7;&#x6C42;&#xFF0C;&#x652F;&#x6301;&#x8FDE;&#x63A5;&#x6C60;&#x3002;</li>
+</ul>
+<h1 id="2-&#x6A21;&#x5757;&#x5B9E;&#x73B0;">2. &#x6A21;&#x5757;&#x5B9E;&#x73B0;</h1>
+<h2 id="21-http&#x5E38;&#x91CF;&#x5B9A;&#x4E49;">2.1 Http&#x5E38;&#x91CF;&#x5B9A;&#x4E49;</h2>
+<h3 id="211-httpparser">2.1.1 http_parser</h3>
+<pre><code class="lang-C++"><span class="hljs-comment">/* Request Methods */</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> HTTP_METHOD_MAP(XX)         \
+  XX(0,  DELETE,      DELETE)       \
+  XX(1,  GET,         GET)          \
+  XX(2,  HEAD,        HEAD)         \
+  XX(3,  POST,        POST)         \
+  XX(4,  PUT,         PUT)          \
+...</span>
+
+<span class="hljs-comment">/* Status Codes */</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> HTTP_STATUS_MAP(XX)                                                 \
+  XX(100, CONTINUE,                        Continue)                        \
+  XX(101, SWITCHING_PROTOCOLS,             Switching Protocols)             \
+  XX(102, PROCESSING,                      Processing)                      \
+  XX(200, OK,                              OK)                              \
+  XX(201, CREATED,                         Created)                         \
+  XX(202, ACCEPTED,                        Accepted)                        \
+  XX(203, NON_AUTHORITATIVE_INFORMATION,   Non-Authoritative Information)   \
+...</span>
+</code></pre>
+<h3 id="212-http">2.1.2 http</h3>
+<pre><code class="lang-C++"><span class="hljs-comment">/**
+ * @brief HTTP&#x65B9;&#x6CD5;&#x679A;&#x4E3E;
+ */</span>
+<span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> HttpMethod {
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> XX(num, name, string) name = num,</span>
+    HTTP_METHOD_MAP(XX)
+<span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> XX</span>
+    INVALID_METHOD
+};
+
+<span class="hljs-comment">/**
+ * @brief HTTP&#x72B6;&#x6001;&#x679A;&#x4E3E;
+ */</span>
+<span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> HttpStatus {
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> XX(code, name, desc) name = code,</span>
+    HTTP_STATUS_MAP(XX)
+<span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> XX</span>
+};
+</code></pre>
+<h2 id="22-http&#x8BF7;&#x6C42;&#x4E0E;&#x54CD;&#x5E94;&#x7ED3;&#x6784;">2.2 Http&#x8BF7;&#x6C42;&#x4E0E;&#x54CD;&#x5E94;&#x7ED3;&#x6784;</h2>
+<p>&#x5305;&#x62EC;HttpRequest&#x548C;HttpResponse&#x4E24;&#x4E2A;&#x7ED3;&#x6784;&#xFF0C;&#x7528;&#x4E8E;&#x5C01;&#x88C5;HTTP&#x8BF7;&#x6C42;&#x4E0E;&#x54CD;&#x5E94;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;HTTP&#x8BF7;&#x6C42;&#xFF0C;&#x9700;&#x8981;&#x5173;&#x6CE8;HTTP&#x65B9;&#x6CD5;&#xFF0C;&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;&#x548C;&#x53C2;&#x6570;&#xFF0C;HTTP&#x7248;&#x672C;&#xFF0C;HTTP&#x5934;&#x90E8;&#x7684;key-value&#x7ED3;&#x6784;&#xFF0C;Cookies&#xFF0C;&#x4EE5;&#x53CA;HTTP Body&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;HTTP&#x54CD;&#x5E94;&#xFF0C;&#x9700;&#x8981;&#x5173;&#x6CE8;HTTP&#x7248;&#x672C;&#xFF0C;&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x54CD;&#x5E94;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x54CD;&#x5E94;&#x5934;&#x90E8;&#x7684;key-value&#x7ED3;&#x6784;&#xFF0C;&#x4EE5;&#x53CA;&#x54CD;&#x5E94;&#x7684;Body&#x5185;&#x5BB9;&#x3002;</p>
+<h2 id="23-httpparser">2.3 HttpParser</h2>
+<blockquote>
+<p>Http&#x89E3;&#x6790;&#x5668;</p>
+</blockquote>
+<p>&#x8F93;&#x5165;&#x5B57;&#x8282;&#x6D41;&#xFF0C;&#x89E3;&#x6790;HTTP&#x6D88;&#x606F;&#xFF0C;&#x5305;&#x62EC;HttpRequestParser&#x548C;HttpResponseParser&#x4E24;&#x4E2A;&#x7ED3;&#x6784;&#x3002;</p>
+<p>HTTP&#x89E3;&#x6790;&#x5668;&#x57FA;&#x4E8E;nodejs/http-parser&#x5B9E;&#x73B0;&#xFF0C;&#x901A;&#x8FC7;&#x5957;&#x63A5;&#x5B57;&#x8BFB;&#x5230;HTTP&#x6D88;&#x606F;&#x540E;&#x5C06;&#x6D88;&#x606F;&#x5185;&#x5BB9;&#x4F20;&#x9012;&#x7ED9;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x89E3;&#x6790;&#x5668;&#x901A;&#x8FC7;&#x56DE;&#x8C03;&#x7684;&#x5F62;&#x5F0F;&#x901A;&#x77E5;&#x8C03;&#x7528;&#x65B9;HTTP&#x89E3;&#x6790;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<h3 id="231-http&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#x7C7B;">2.3.1 HTTP&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#x7C7B;</h3>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> HttpRequestParser {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-comment">/// HTTP&#x89E3;&#x6790;&#x7C7B;&#x7684;&#x667A;&#x80FD;&#x6307;&#x9488;</span>
+    <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;HttpRequestParser&gt; ptr;
+
+...
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-comment">/// http_parser</span>
+    http_parser m_parser;
+    <span class="hljs-comment">/// HttpRequest</span>
+    HttpRequest::ptr m_data;
+    <span class="hljs-comment">/// &#x9519;&#x8BEF;&#x7801;&#xFF0C;&#x53C2;&#x8003;http_errno</span>
+    <span class="hljs-keyword">int</span> m_error;
+    <span class="hljs-comment">/// &#x662F;&#x5426;&#x89E3;&#x6790;&#x7ED3;&#x675F;</span>
+    <span class="hljs-keyword">bool</span> m_finished;
+    <span class="hljs-comment">/// &#x5F53;&#x524D;&#x7684;HTTP&#x5934;&#x90E8;field&#xFF0C;http-parser&#x89E3;&#x6790;HTTP&#x5934;&#x90E8;&#x662F;field&#x548C;value&#x5206;&#x4E24;&#x6B21;&#x8FD4;&#x56DE;</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> m_field;
+};
+</code></pre>
+<h3 id="232-http&#x54CD;&#x5E94;&#x89E3;&#x6790;&#x7ED3;&#x6784;&#x4F53;">2.3.2 Http&#x54CD;&#x5E94;&#x89E3;&#x6790;&#x7ED3;&#x6784;&#x4F53;</h3>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> HttpResponseParser {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-comment">/// &#x667A;&#x80FD;&#x6307;&#x9488;&#x7C7B;&#x578B;</span>
+    <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;HttpResponseParser&gt; ptr;
+
+...
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-comment">/// HTTP&#x54CD;&#x5E94;&#x89E3;&#x6790;&#x5668;</span>
+    http_parser m_parser;
+    <span class="hljs-comment">/// HTTP&#x54CD;&#x5E94;&#x5BF9;&#x8C61;</span>
+    HttpResponse::ptr m_data;
+    <span class="hljs-comment">/// &#x9519;&#x8BEF;&#x7801;</span>
+    <span class="hljs-keyword">int</span> m_error;
+    <span class="hljs-comment">/// &#x662F;&#x5426;&#x89E3;&#x6790;&#x7ED3;&#x675F;</span>
+    <span class="hljs-keyword">bool</span> m_finished;
+    <span class="hljs-comment">/// &#x5F53;&#x524D;&#x7684;HTTP&#x5934;&#x90E8;field</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> m_field;
+};
+</code></pre>
+<h2 id="24-httpsession">2.4 HttpSession</h2>
+<blockquote>
+<p>Http&#x4F1A;&#x8BDD;&#x7ED3;&#x6784;</p>
+</blockquote>
+<p>&#x7EE7;&#x627F;&#x81EA;SocketStream&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x5728;&#x5957;&#x63A5;&#x5B57;&#x6D41;&#x4E0A;&#x8BFB;&#x53D6;HTTP&#x8BF7;&#x6C42;&#x4E0E;&#x53D1;&#x9001;HTTP&#x54CD;&#x5E94;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x8BFB;&#x53D6;HTTP&#x8BF7;&#x6C42;&#x65F6;&#x9700;&#x8981;&#x501F;&#x52A9;HTTP&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x5C06;&#x5957;&#x63A5;&#x5B57;&#x6D41;&#x4E0A;&#x7684;&#x5185;&#x5BB9;&#x89E3;&#x6790;&#x6210;HTTP&#x8BF7;&#x6C42;&#x3002;</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> HttpSession : <span class="hljs-keyword">public</span> SocketStream {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;HttpSession&gt; ptr;
+
+    HttpSession(Socket::ptr sock, <span class="hljs-keyword">bool</span> owner = <span class="hljs-literal">true</span>);
+    HttpRequest::<span class="hljs-function">ptr <span class="hljs-title">recvRequest</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sendResponse</span><span class="hljs-params">(HttpResponse::ptr rsp)</span></span>;
+};
+</code></pre>
+<h2 id="25-httpserver">2.5 HttpServer</h2>
+<blockquote>
+<p>Http&#x670D;&#x52A1;&#x5668;</p>
+</blockquote>
+<p>&#x7EE7;&#x627F;&#x81EA;TcpServer&#xFF0C;&#x91CD;&#x8F7D;handleClient&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;accept&#x540E;&#x5F97;&#x5230;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5957;&#x63A5;&#x5B57;&#x5C01;&#x88C5;&#x6210;HttpSession&#x7ED3;&#x6784;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x63A5;&#x6536;&#x548C;&#x53D1;&#x9001;HTTP&#x6D88;&#x606F;&#x3002;</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> HttpServer : <span class="hljs-keyword">public</span> TcpServer {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;HttpServer&gt; ptr;
+
+    HttpServer(<span class="hljs-keyword">bool</span> keepalive = <span class="hljs-literal">false</span>
+               ,jujimeizuo::IOManager* worker = jujimeizuo::IOManager::GetThis()
+               ,jujimeizuo::IOManager* io_worker = jujimeizuo::IOManager::GetThis()
+               ,jujimeizuo::IOManager* accept_worker = jujimeizuo::IOManager::GetThis());
+
+    ServletDispatch::<span class="hljs-function">ptr <span class="hljs-title">getServletDispatch</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> m_dispatch;}
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setServletDispatch</span><span class="hljs-params">(ServletDispatch::ptr v)</span> </span>{ m_dispatch = v;}
+
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; v)</span> override</span>;
+<span class="hljs-keyword">protected</span>:
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleClient</span><span class="hljs-params">(Socket::ptr client)</span> override</span>;
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-comment">/// &#x662F;&#x5426;&#x652F;&#x6301;&#x957F;&#x8FDE;&#x63A5;</span>
+    <span class="hljs-keyword">bool</span> m_isKeepalive;
+    <span class="hljs-comment">/// Servlet&#x5206;&#x53D1;&#x5668;</span>
+    ServletDispatch::ptr m_dispatch;
+};
+</code></pre>
+<h2 id="26-http-servlet">2.6 Http Servlet</h2>
+<blockquote>
+<p>Http&#x8BF7;&#x6C42;</p>
+</blockquote>
+<p>&#x63D0;&#x4F9B;HTTP&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;&#x5230;&#x5904;&#x7406;&#x7C7B;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x7528;&#x4E8E;&#x89C4;&#x8303;&#x5316;&#x7684;HTTP&#x6D88;&#x606F;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x3002;</p>
+<p>HTTP Servlet&#x5305;&#x62EC;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x662F;Servlet&#x5BF9;&#x8C61;&#xFF0C;&#x6BCF;&#x4E2A;Servlet&#x5BF9;&#x8C61;&#x8868;&#x793A;&#x4E00;&#x79CD;&#x5904;&#x7406;HTTP&#x6D88;&#x606F;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x662F;ServletDispatch&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;&#x5230;Servlet&#x5BF9;&#x8C61;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;&#x8BE5;&#x7528;&#x54EA;&#x4E2A;Servlet&#x6765;&#x5904;&#x7406;&#x3002;</p>
+<h3 id="261-servlet">2.6.1 Servlet</h3>
+<blockquote>
+<p>Servlet&#x7C7B;</p>
+</blockquote>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Servlet {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;Servlet&gt; ptr;
+
+    Servlet(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; name)
+        :m_name(name) {}
+    <span class="hljs-keyword">virtual</span> ~Servlet() {}
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> int32_t <span class="hljs-title">handle</span><span class="hljs-params">(jujimeizuo::http::HttpRequest::ptr request
+                   , jujimeizuo::http::HttpResponse::ptr response
+                   , jujimeizuo::http::HttpSession::ptr session)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span>&amp; <span class="hljs-title">getName</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> m_name;}
+<span class="hljs-keyword">protected</span>:
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> m_name;
+};
+</code></pre>
+<h3 id="262-servletdispatch">2.6.2 ServletDispatch</h3>
+<blockquote>
+<p>Servlet&#x5206;&#x53D1;&#x5668;</p>
+</blockquote>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> ServletDispatch : <span class="hljs-keyword">public</span> Servlet {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;ServletDispatch&gt; ptr;
+    <span class="hljs-keyword">typedef</span> RWMutex RWMutexType;
+
+...
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-comment">/// &#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x91CF;</span>
+    RWMutexType m_mutex;
+    <span class="hljs-comment">/// &#x7CBE;&#x51C6;&#x5339;&#x914D;servlet MAP</span>
+    <span class="hljs-comment">/// uri(/jujimeizuo/xxx) -&gt; servlet</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">unordered_map</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>, IServletCreator::ptr&gt; m_datas;
+    <span class="hljs-comment">/// &#x6A21;&#x7CCA;&#x5339;&#x914D;servlet &#x6570;&#x7EC4;</span>
+    <span class="hljs-comment">/// uri(/jujimeizuo/*) -&gt; servlet</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::pair&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>, IServletCreator::ptr&gt; &gt; m_globs;
+    <span class="hljs-comment">/// &#x9ED8;&#x8BA4;servlet&#xFF0C;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#x90FD;&#x6CA1;&#x5339;&#x914D;&#x5230;&#x65F6;&#x4F7F;&#x7528;</span>
+    Servlet::ptr m_default;
+};
+</code></pre>
+<h2 id="27-httpconnection">2.7 HttpConnection</h2>
+<blockquote>
+<p>Http&#x5BA2;&#x6237;&#x7AEF;</p>
+</blockquote>
+<p>&#x7528;&#x4E8E;&#x53D1;&#x8D77;GET/POST&#x7B49;&#x8BF7;&#x6C42;&#x5E76;&#x83B7;&#x53D6;&#x54CD;&#x5E94;&#xFF0C;&#x652F;&#x6301;&#x8BBE;&#x7F6E;&#x8D85;&#x65F6;&#xFF0C;keep-alive&#xFF0C;&#x652F;&#x6301;&#x8FDE;&#x63A5;&#x6C60;&#x3002;</p>
+<p>HTTP&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4E1A;&#x52A1;&#x6A21;&#x578B;&#x662F;&#x63A5;&#x6536;&#x8BF7;&#x6C42;&#x2192; &#x53D1;&#x9001;&#x54CD;&#x5E94;&#xFF0C;&#x800C;HTTP&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4E1A;&#x52A1;&#x6A21;&#x578B;&#x662F;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x2192; &#x63A5;&#x6536;&#x54CD;&#x5E94;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x8FDE;&#x63A5;&#x6C60;&#xFF0C;&#x662F;&#x6307;&#x63D0;&#x524D;&#x9884;&#x5907;&#x597D;&#x4E00;&#x7CFB;&#x5217;&#x5DF2;&#x63A5;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x7684;socket&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4ECE;&#x4E2D;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x91CD;&#x590D;&#x521B;&#x5EFA;&#x5957;&#x63A5;&#x5B57;&#x2192; &#x53D1;&#x8D77;connect&#x2192; &#x53D1;&#x8D77;&#x8BF7;&#x6C42; &#x7684;&#x6D41;&#x7A0B;&#x3002;</p>
+<p>&#x8FDE;&#x63A5;&#x6C60;&#x4E0E;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x65F6;&#x7684;keep-alive&#x53C2;&#x6570;&#x6709;&#x5173;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x8FDE;&#x63A5;&#x6C60;&#x6765;&#x53D1;&#x8D77;GET/POST&#x8BF7;&#x6C42;&#xFF0C;&#x5728;&#x672A;&#x8BBE;&#x7F6E;keep-alive&#x65F6;&#xFF0C;&#x8FDE;&#x63A5;&#x6C60;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x5375;&#x7528;&#x3002;</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> HttpConnection : <span class="hljs-keyword">public</span> SocketStream {
+<span class="hljs-keyword">friend</span> <span class="hljs-keyword">class</span> HttpConnectionPool;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;HttpConnection&gt; ptr;
+
+...
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-comment">/// &#x521B;&#x5EFA;&#x65F6;&#x95F4;</span>
+    <span class="hljs-keyword">uint64_t</span> m_createTime = <span class="hljs-number">0</span>;
+    <span class="hljs-comment">/// &#x8BE5;&#x8FDE;&#x63A5;&#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x6B21;&#x6570;&#xFF0C;&#x53EA;&#x5728;&#x4F7F;&#x7528;&#x8FDE;&#x63A5;&#x6C60;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6709;&#x7528;</span>
+    <span class="hljs-keyword">uint64_t</span> m_request = <span class="hljs-number">0</span>;
+};
+</code></pre>
+<h1 id="3-&#x603B;&#x7ED3;">3. &#x603B;&#x7ED3;</h1>
+<p>Http&#x7684;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x76F8;&#x4E92;&#x8054;&#x7CFB;&#x3001;&#x4E0D;&#x53EF;&#x5206;&#x5272;&#xFF0C;&#x4ECE;&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#xFF0C;&#x5230;&#x89E3;&#x6790;&#xFF0C;&#x5305;&#x62EC;&#x4F1A;&#x8BDD;&#xFF0C;&#x518D;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</p>
+<p>HTTP&#x6A21;&#x5757;&#x4F9D;&#x8D56;nodejs/http-parser&#x63D0;&#x4F9B;&#x7684;HTTP&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x5E76;&#x4E14;&#x76F4;&#x63A5;&#x590D;&#x7528;&#x4E86;nodejs/http-parser&#x4E2D;&#x5B9A;&#x4E49;&#x7684;HTTP&#x65B9;&#x6CD5;&#x4E0E;&#x72B6;&#x6001;&#x679A;&#x4E3E;&#x3002;</p>
+
+                        
+                    </section>
+                    
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+        <a href="../TcpServer/"
+           class="navigation navigation-prev navigation-unique"
+           aria-label="Previous page: TcpServer模块">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Http模块","level":"1.4.15","depth":2,"previous":{"title":"TcpServer模块","level":"1.4.14","depth":2,"path":"server/TcpServer/README.md","ref":"server/TcpServer/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":false,"favicon":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","target":"_blank","title":"flexible-linkcard"},"logo":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"server/Http/README.md","mtime":"2023-04-11T13:06:56.274Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-11T13:08:37.081Z"},"basePath":"../..","book":{"language":""}})
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-hqbook/theme.js"></script>
+        
+    
+
+    </body>
+</html>
+
