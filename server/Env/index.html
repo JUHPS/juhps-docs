@@ -575,6 +575,47 @@
     <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> m_cwd;
 };
 </code></pre>
+<h2 id="22-&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;">2.2 &#x5B88;&#x62A4;&#x8FDB;&#x7A0B;</h2>
+<p>&#x5C06;&#x8FDB;&#x7A0B;&#x4E0E;&#x7EC8;&#x7AEF;&#x89E3;&#x7ED1;&#xFF0C;&#x8F6C;&#x5230;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x9664;&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x5B9E;&#x73B0;&#x4E86;&#x53CC;&#x8FDB;&#x7A0B;&#x5524;&#x9192;&#x529F;&#x80FD;&#xFF0C;&#x7236;&#x8FDB;&#x7A0B;&#x4F5C;&#x4E3A;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x7684;&#x540C;&#x65F6;&#x4F1A;&#x68C0;&#x6D4B;&#x5B50;&#x8FDB;&#x7A0B;&#x662F;&#x5426;&#x9000;&#x51FA;&#xFF0C;&#x5982;&#x679C;&#x5B50;&#x8FDB;&#x7A0B;&#x9000;&#x51FA;&#xFF0C;&#x5219;&#x4F1A;&#x5B9A;&#x65F6;&#x91CD;&#x65B0;&#x62C9;&#x8D77;&#x5B50;&#x8FDB;&#x7A0B;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x7684;&#x5B9E;&#x73B0;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<p>&#x8C03;&#x7528;daemon(1, 0)&#x5C06;&#x5F53;&#x524D;&#x8FDB;&#x7A0B;&#x4EE5;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x7684;&#x5F62;&#x5F0F;&#x8FD0;&#x884C;&#xFF1B;
+&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;fork&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x5728;&#x5B50;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;&#x4E3B;&#x4E1A;&#x52A1;&#xFF1B;
+&#x7236;&#x8FDB;&#x7A0B;&#x901A;&#x8FC7;waitpid()&#x68C0;&#x6D4B;&#x5B50;&#x8FDB;&#x7A0B;&#x662F;&#x5426;&#x9000;&#x51FA;&#xFF0C;&#x5982;&#x679C;&#x5B50;&#x8FDB;&#x7A0B;&#x9000;&#x51FA;&#xFF0C;&#x5219;&#x91CD;&#x65B0;&#x62C9;&#x8D77;&#x5B50;&#x8FDB;&#x7A0B;&#xFF1B;</p>
+<pre><code class="lang-C++">static int real_daemon(int argc, char** argv,
+                     std::function&lt;int(int argc, char** argv)&gt; main_cb) {
+    daemon(1, 0);
+    ProcessInfoMgr::GetInstance()-&gt;parent_id = getpid();
+    ProcessInfoMgr::GetInstance()-&gt;parent_start_time = time(0);
+    while(true) {
+        pid_t pid = fork();
+        if(pid == 0) {
+            //&#x5B50;&#x8FDB;&#x7A0B;&#x8FD4;&#x56DE;
+            ProcessInfoMgr::GetInstance()-&gt;main_id = getpid();
+            ProcessInfoMgr::GetInstance()-&gt;main_start_time  = time(0);
+            JUJIMEIZUO_LOG_INFO(g_logger) &lt;&lt; &quot;process start pid=&quot; &lt;&lt; getpid();
+            return real_start(argc, argv, main_cb);
+        } else if(pid &lt; 0) {
+            JUJIMEIZUO_LOG_ERROR(g_logger) &lt;&lt; &quot;fork fail return=&quot; &lt;&lt; pid
+                &lt;&lt; &quot; errno=&quot; &lt;&lt; errno &lt;&lt; &quot; errstr=&quot; &lt;&lt; strerror(errno);
+            return -1;
+        } else {
+            //&#x7236;&#x8FDB;&#x7A0B;&#x8FD4;&#x56DE;
+            int status = 0;
+            waitpid(pid, &amp;status, 0);
+            if(status) {
+                JUJIMEIZUO_LOG_ERROR(g_logger) &lt;&lt; &quot;child crash pid=&quot; &lt;&lt; pid
+                    &lt;&lt; &quot; status=&quot; &lt;&lt; status;
+            } else {
+                JUJIMEIZUO_LOG_INFO(g_logger) &lt;&lt; &quot;child finished pid=&quot; &lt;&lt; pid;
+                break;
+            }
+            ProcessInfoMgr::GetInstance()-&gt;restart_count += 1;
+            sleep(g_daemon_restart_interval-&gt;getValue());
+        }
+    }
+    return 0;
+}
+</code></pre>
 <h1 id="3-&#x603B;&#x7ED3;">3. &#x603B;&#x7ED3;</h1>
 <p>&#x5728;&#x89E3;&#x6790;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;getopt()/getopt_long()&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x4E86;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x7684;&#x89E3;&#x6790;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x5C31;&#x5BFC;&#x81F4;sylar&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x957F;&#x9009;&#x9879;&#x548C;&#x9009;&#x9879;&#x5408;&#x5E76;&#xFF0C;&#x50CF;ps -aux&#x8FD9;&#x6837;&#x7684;&#x591A;&#x4E2A;&#x9009;&#x9879;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x4EE5;&#x53CA;ps --help&#x8FD9;&#x6837;&#x7684;&#x957F;&#x9009;&#x9879;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x3002;</p>
 
@@ -623,7 +664,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"环境变量模块","level":"1.4.2","depth":2,"next":{"title":"配置模块","level":"1.4.3","depth":2,"path":"server/Config/README.md","ref":"server/Config/README.md","articles":[]},"previous":{"title":"日志模块","level":"1.4.1","depth":2,"path":"server/Logger/README.md","ref":"server/Logger/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":false,"favicon":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","target":"_blank","title":"flexible-linkcard"},"logo":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"server/Env/README.md","mtime":"2023-04-11T13:08:21.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-11T13:08:37.081Z"},"basePath":"../..","book":{"language":""}})
+            gitbook.page.hasChanged({"page":{"title":"环境变量模块","level":"1.4.2","depth":2,"next":{"title":"配置模块","level":"1.4.3","depth":2,"path":"server/Config/README.md","ref":"server/Config/README.md","articles":[]},"previous":{"title":"日志模块","level":"1.4.1","depth":2,"path":"server/Logger/README.md","ref":"server/Logger/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":false,"favicon":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","target":"_blank","title":"flexible-linkcard"},"logo":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"server/Env/README.md","mtime":"2023-04-11T13:28:05.770Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-11T13:37:43.126Z"},"basePath":"../..","book":{"language":""}})
         });
     </script>
 </div>
