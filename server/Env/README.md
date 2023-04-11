@@ -83,6 +83,54 @@ private:
 };
 ```
 
+## 2.2 守护进程
+
+将进程与终端解绑，转到后台运行，除此外，还实现了双进程唤醒功能，父进程作为守护进程的同时会检测子进程是否退出，如果子进程退出，则会定时重新拉起子进程。
+
+以下是守护进程的实现步骤：
+
+调用daemon(1, 0)将当前进程以守护进程的形式运行；
+守护进程fork子进程，在子进程运行主业务；
+父进程通过waitpid()检测子进程是否退出，如果子进程退出，则重新拉起子进程；
+
+
+```C++
+static int real_daemon(int argc, char** argv,
+                     std::function<int(int argc, char** argv)> main_cb) {
+    daemon(1, 0);
+    ProcessInfoMgr::GetInstance()->parent_id = getpid();
+    ProcessInfoMgr::GetInstance()->parent_start_time = time(0);
+    while(true) {
+        pid_t pid = fork();
+        if(pid == 0) {
+            //子进程返回
+            ProcessInfoMgr::GetInstance()->main_id = getpid();
+            ProcessInfoMgr::GetInstance()->main_start_time  = time(0);
+            JUJIMEIZUO_LOG_INFO(g_logger) << "process start pid=" << getpid();
+            return real_start(argc, argv, main_cb);
+        } else if(pid < 0) {
+            JUJIMEIZUO_LOG_ERROR(g_logger) << "fork fail return=" << pid
+                << " errno=" << errno << " errstr=" << strerror(errno);
+            return -1;
+        } else {
+            //父进程返回
+            int status = 0;
+            waitpid(pid, &status, 0);
+            if(status) {
+                JUJIMEIZUO_LOG_ERROR(g_logger) << "child crash pid=" << pid
+                    << " status=" << status;
+            } else {
+                JUJIMEIZUO_LOG_INFO(g_logger) << "child finished pid=" << pid;
+                break;
+            }
+            ProcessInfoMgr::GetInstance()->restart_count += 1;
+            sleep(g_daemon_restart_interval->getValue());
+        }
+    }
+    return 0;
+}
+```
+
 # 3. 总结
 
 在解析命令行参数时，没有使用getopt()/getopt_long()接口，而是使用了自己编写的解析代码，这就导致sylar的命令行参数不支持长选项和选项合并，像ps -aux这样的多个选项组合在一起的命令行参数以及ps --help这样的长选项是不支持的。
