@@ -361,7 +361,7 @@
                 <a href="server/Address/">
             
                     
-                    网络地址模块
+                    Address模块
             
                 </a>
             
@@ -400,7 +400,7 @@
                 <a href="server/Stream/">
             
                     
-                    字节流序列化模块
+                    Stream模块
             
                 </a>
             
@@ -436,6 +436,233 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="tests/">
+            
+                <a href="tests/">
+            
+                    
+                    测试结果
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="tests/test_log/">
+            
+                <a href="tests/test_log/">
+            
+                    
+                    日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="tests/test_util/">
+            
+                <a href="tests/test_util/">
+            
+                    
+                    工具模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="tests/test_env/">
+            
+                <a href="tests/test_env/">
+            
+                    
+                    环境变量模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="tests/test_config/">
+            
+                <a href="tests/test_config/">
+            
+                    
+                    配置模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="tests/test_thread/">
+            
+                <a href="tests/test_thread/">
+            
+                    
+                    线程模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="tests/test_fiber/">
+            
+                <a href="tests/test_fiber/">
+            
+                    
+                    协程模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="tests/test_scheduler/">
+            
+                <a href="tests/test_scheduler/">
+            
+                    
+                    协程调度模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="tests/test_iomanager/">
+            
+                <a href="tests/test_iomanager/">
+            
+                    
+                    IO协程调度模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="tests/test_timer/">
+            
+                <a href="tests/test_timer/">
+            
+                    
+                    定时器模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="tests/test_hook/">
+            
+                <a href="tests/test_hook/">
+            
+                    
+                    Hook模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="tests/test_address/">
+            
+                <a href="tests/test_address/">
+            
+                    
+                    Address模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="tests/test_socket/">
+            
+                <a href="tests/test_socket/">
+            
+                    
+                    Socket模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="tests/test_bytearray/">
+            
+                <a href="tests/test_bytearray/">
+            
+                    
+                    BtreArray序列化模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="tests/test_tcp_server/">
+            
+                <a href="tests/test_tcp_server/">
+            
+                    
+                    TcpServer模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="tests/test_http/">
+            
+                <a href="tests/test_http/">
+            
+                    
+                    Http模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="benchmark/">
+            
+                <a href="benchmark/">
+            
+                    
+                    基准测试
+            
+                </a>
+            
+
             
         </li>
     
@@ -492,7 +719,136 @@
     
                     <section class="normal markdown-section">
                         
-                        
+                        <h1 id="juhps-server">JUHPS-server</h1>
+<h2 id="&#x6A21;&#x5757;&#x6982;&#x8FF0;">&#x6A21;&#x5757;&#x6982;&#x8FF0;</h2>
+<h3 id="&#x65E5;&#x5FD7;&#x6A21;&#x5757;">&#x65E5;&#x5FD7;&#x6A21;&#x5757;</h3>
+<p>&#x652F;&#x6301;&#x6D41;&#x5F0F;&#x65E5;&#x5FD7;&#x98CE;&#x683C;&#x5199;&#x65E5;&#x5FD7;&#x548C;&#x683C;&#x5F0F;&#x5316;&#x98CE;&#x683C;&#x5199;&#x65E5;&#x5FD7;&#xFF0C;&#x652F;&#x6301;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#xFF0C;&#x591A;&#x65E5;&#x5FD7;&#x5206;&#x79BB;&#x7B49;&#x7B49;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x6D41;&#x5F0F;&#x65E5;&#x5FD7;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-cpp">JUJIMEIZUO_LOG_INFO(g_logger) &lt;&lt; <span class="hljs-string">&quot;this is a log&quot;</span>;
+</code></pre>
+<p>&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x5FD7;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-cpp">JUJIMEIZUO_LOG_FMT_INFO(g_logger, <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;this is a log&quot;</span>);
+</code></pre>
+<p>&#x65E5;&#x5FD7;&#x652F;&#x6301;&#x81EA;&#x7531;&#x914D;&#x7F6E;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x7D2F;&#x8BA1;&#x8FD0;&#x884C;&#x6BEB;&#x79D2;&#x6570;&#xFF0C;&#x7EBF;&#x7A0B;id&#xFF0C;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#xFF0C;&#x534F;&#x7A0B;id&#xFF0C;&#x65E5;&#x5FD7;&#x7EBF;&#x522B;&#xFF0C;&#x65E5;&#x5FD7;&#x540D;&#x79F0;&#xFF0C;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x884C;&#x53F7;&#x3002;</p>
+<p>&#x4E0E;&#x65E5;&#x5FD7;&#x6A21;&#x5757;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#xFF1A;</p>
+<p><code>LogEvent</code>: &#x65E5;&#x5FD7;&#x4E8B;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x65E5;&#x5FD7;&#x73B0;&#x573A;&#xFF0C;&#x6BD4;&#x5982;&#x6240;&#x5C5E;&#x65E5;&#x5FD7;&#x5668;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x7EBF;&#x7A0B;/&#x534F;&#x7A0B;id&#xFF0C;&#x6587;&#x4EF6;&#x540D;/&#x884C;&#x53F7;&#x7B49;&#xFF0C;&#x4EE5;&#x53CA;&#x65E5;&#x5FD7;&#x6D88;&#x606F;&#x5185;&#x5BB9;&#x3002;</p>
+<p><code>LogFormatter</code>: &#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x5668;&#xFF0C;&#x6784;&#x9020;&#x65F6;&#x53EF;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6839;&#x636E;&#x8BE5;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x677F;&#x9879;&#x5BF9;&#x4E00;&#x4E2A;&#x65E5;&#x5FD7;&#x4E8B;&#x4EF6;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;&#xFF0C;&#x63D0;&#x4F9B;format&#x65B9;&#x6CD5;&#x5BF9;LogEvent&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;&#x5E76;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6D41;&#x3002;</p>
+<p><code>LogAppender</code>&#xFF1A;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x5C06;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x7684;&#x5730;&#xFF0C;&#x6BD4;&#x5982;&#x7EC8;&#x7AEF;&#x548C;&#x6587;&#x4EF6;&#x7B49;&#x3002;LogAppender&#x5185;&#x90E8;&#x5305;&#x542B;&#x4E00;&#x4E2A;LogFormatter&#x6210;&#x5458;&#xFF0C;&#x63D0;&#x4F9B;log&#x65B9;&#x6CD5;&#x5BF9;LogEvent&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x8F93;&#x51FA;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x7684;&#x5730;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x865A;&#x7C7B;&#xFF0C;&#x901A;&#x8FC7;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x5F0F;&#x53EF;&#x6D3E;&#x751F;&#x51FA;&#x4E0D;&#x540C;&#x7684;Appender&#xFF0C;&#x76EE;&#x524D;&#x9ED8;&#x8BA4;&#x63D0;&#x4F9B;&#x4E86;StdoutAppender&#x548C;FileAppender&#x4E24;&#x4E2A;&#x7C7B;&#xFF0C;&#x7528;&#x4E8E;&#x8F93;&#x51FA;&#x5230;&#x7EC8;&#x7AEF;&#x548C;&#x6587;&#x4EF6;&#x3002;</p>
+<p><code>Logger</code>: &#x65E5;&#x5FD7;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x5199;&#x65E5;&#x5FD7;&#xFF0C;&#x5305;&#x542B;&#x540D;&#x79F0;&#xFF0C;&#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4EE5;&#x53CA;&#x6570;&#x4E2A;LogAppender&#x6210;&#x5458;&#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x4E2A;&#x65E5;&#x5FD7;&#x4E8B;&#x4EF6;&#x7ECF;&#x8FC7;&#x5224;&#x65AD;&#x9AD8;&#x4E8E;&#x65E5;&#x5FD7;&#x5668;&#x81EA;&#x8EAB;&#x7684;&#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x65F6;&#x5373;&#x4F1A;&#x542F;&#x52A8;Appender&#x8FDB;&#x884C;&#x8F93;&#x51FA;&#x3002;&#x65E5;&#x5FD7;&#x5668;&#x9ED8;&#x8BA4;&#x4E0D;&#x5E26;Appender&#xFF0C;&#x9700;&#x8981;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x624B;&#x52A8;&#x6DFB;&#x52A0;&#x3002;</p>
+<p><code>LoggerManager</code>&#xFF1A;&#x65E5;&#x5FD7;&#x5668;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF0C;&#x5305;&#x542B;&#x5168;&#x90E8;&#x7684;&#x65E5;&#x5FD7;&#x5668;&#x96C6;&#x5408;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x6216;&#x83B7;&#x53D6;&#x65E5;&#x5FD7;&#x5668;&#x3002;LoggerManager&#x521D;&#x59CB;&#x5316;&#x65F6;&#x81EA;&#x5E26;&#x4E00;&#x4E2A;root&#x65E5;&#x5FD7;&#x5668;&#xFF0C;&#x8FD9;&#x4E3A;&#x65E5;&#x5FD7;&#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x53EF;&#x7528;&#x7684;&#x65E5;&#x5FD7;&#x5668;&#x3002;</p>
+<p>&#x672C;&#x9879;&#x76EE;&#x7684;&#x65E5;&#x5FD7;&#x6A21;&#x5757;&#x57FA;&#x4E8E;jujimeizuo&#x7684;&#x8FDB;&#x884C;&#x4E86;&#x7B80;&#x5316;&#xFF0C;&#x540C;&#x65F6;&#x53C2;&#x8003;&#x4E86;log4cpp&#x7684;&#x4E00;&#x4E9B;&#x8BBE;&#x8BA1;&#xFF0C;&#x5728;&#x4FDD;&#x8BC1;&#x529F;&#x80FD;&#x53EF;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x51E0;&#x4E2A;&#x7C7B;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x964D;&#x4F4E;&#x4E86;&#x8026;&#x5408;&#x5EA6;&#x3002;&#x76EE;&#x524D;&#x6765;&#x770B;&#xFF0C;&#x5728;LogAppender&#x4E0A;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x4E30;&#x5BCC;&#xFF0C;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x7C7B;&#x578B;&#x7684;Appender&#x5728;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;&#x90FD;&#x975E;&#x5E38;&#x6709;&#x5FC5;&#x8981;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<ol>
+<li>Rolling File Appender&#xFF0C;&#x5FAA;&#x73AF;&#x8986;&#x76D6;&#x5199;&#x6587;&#x4EF6;</li>
+<li>&#x5185;&#x5B58;Rolling Appender</li>
+<li>&#x652F;&#x6301;Log&#x65E5;&#x5FD7;&#x6309;&#x5927;&#x5C0F;&#x5206;&#x7247;</li>
+<li>&#x652F;&#x6301;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6BD4;&#x5982;syslog</li>
+</ol>
+<h3 id="util&#x4E0E;marco&#x6A21;&#x5757;">Util&#x4E0E;Marco&#x6A21;&#x5757;</h3>
+<p>&#x5DE5;&#x5177;&#x63A5;&#x53E3;&#x4E0E;&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x529F;&#x80FD;&#x5B8F;&#x5B9A;&#x4E49;&#x3002;&#x5305;&#x62EC;&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#xFF0C;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#xFF0C;&#x6808;&#x56DE;&#x6EAF;&#xFF0C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x64CD;&#x4F5C;&#x63A5;&#x53E3;&#xFF0C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x53CA;JUJIMEIZUO_ASSERT&#x5B8F;&#x3002;&#x8BE6;&#x7EC6;&#x63A5;&#x53E3;&#x53C2;&#x8003;util.h&#xFF0C;macro.h&#x3002;</p>
+<h3 id="&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6A21;&#x5757;">&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6A21;&#x5757;</h3>
+<p>&#x63D0;&#x4F9B;&#x7BA1;&#x7406;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7BA1;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x5305;&#x62EC;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#xFF0C;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#xFF0C;exe&#x540D;&#x79F0;&#x4E0E;&#x7A0B;&#x5E8F;&#x8DEF;&#x5F84;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x5168;&#x90E8;&#x4EE5;key-value&#x7684;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x5B58;&#x50A8;&#xFF0C;key&#x548C;value&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;&#x3002;&#x63D0;&#x4F9B;add/get/has/del&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x64CD;&#x4F5C;&#x81EA;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x548C;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;&#x4E0E;&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;setEnv/getEnv&#x7528;&#x4E8E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x63D0;&#x4F9B;addHelp/removeHelp/printHelp&#x7528;&#x4E8E;&#x64CD;&#x4F5C;&#x5E2E;&#x5FD9;&#x4FE1;&#x606F;&#xFF0C;&#x63D0;&#x4F9B;getExe/getCwd&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x7A0B;&#x5E8F;&#x540D;&#x79F0;&#x53CA;&#x7A0B;&#x5E8F;&#x8DEF;&#x5F84;&#xFF0C;&#x63D0;&#x4F9B;getAbsolutePath/getAbsoluteWorkPath/getConfigPath&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x8DEF;&#x5F84;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5F85;&#x6539;&#x8FDB;&#xFF1A;
+&#x4F7F;&#x7528;getopt&#x7CFB;&#x5217;&#x63A5;&#x53E3;&#x89E3;&#x6790;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;&#x4E0E;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x89E3;&#x6790;&#x9009;&#x9879;&#x5408;&#x5E76;&#x548C;&#x957F;&#x9009;&#x9879;&#xFF0C;&#x6BD4;&#x5982;&#x50CF;&quot;ps -auf&quot;&#x548C;&quot;ps --help&quot;&#x3002;</p>
+<h3 id="&#x914D;&#x7F6E;&#x6A21;&#x5757;">&#x914D;&#x7F6E;&#x6A21;&#x5757;</h3>
+<p>&#x91C7;&#x7528;&#x7EA6;&#x5B9A;&#x4F18;&#x4E8E;&#x914D;&#x7F6E;&#x7684;&#x601D;&#x60F3;&#x3002;&#x5B9A;&#x4E49;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x3002;&#x652F;&#x6301;&#x53D8;&#x66F4;&#x901A;&#x77E5;&#x529F;&#x80FD;&#x3002;&#x4F7F;&#x7528;YAML&#x6587;&#x4EF6;&#x505A;&#x4E3A;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#xFF0C;&#x914D;&#x7F6E;&#x540D;&#x79F0;&#x5927;&#x5C0F;&#x5199;&#x4E0D;&#x654F;&#x611F;&#x3002;&#x652F;&#x6301;&#x7EA7;&#x522B;&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x652F;&#x6301;STL&#x5BB9;&#x5668;(vector,list,set,map&#x7B49;&#x7B49;),&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x7684;&#x652F;&#x6301;&#xFF08;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x65B9;&#x6CD5;)&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">static</span> jujimeizuo::ConfigVar&lt;<span class="hljs-keyword">int</span>&gt;::ptr g_tcp_connect_timeout = 
+    jujimeizuo::Config::Lookup(<span class="hljs-string">&quot;tcp.connect.timeout&quot;</span>, <span class="hljs-number">5000</span>, <span class="hljs-string">&quot;tcp connect timeout&quot;</span>);
+</code></pre>
+<p>&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;tcp&#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>g_tcp_connect_timeout-&gt;getValue()</code>&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x7684;&#x503C;&#xFF0C;&#x5F53;&#x914D;&#x7F6E;&#x4FEE;&#x6539;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#xFF0C;&#x8BE5;&#x503C;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#xFF08;&#x5E76;&#x89E6;&#x53D1;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x66F4;&#x65B0;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF09;&#xFF0C;&#x4E0A;&#x8FF0;&#x914D;&#x7F6E;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">tcp:</span>
+<span class="hljs-attr">    connect:</span>
+<span class="hljs-attr">            timeout:</span> <span class="hljs-number">10000</span>
+</code></pre>
+<p>&#x4E0E;&#x914D;&#x7F6E;&#x6A21;&#x5757;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#xFF1A;</p>
+<p><code>ConfigVarBase</code>: &#x914D;&#x7F6E;&#x53C2;&#x6570;&#x57FA;&#x7C7B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x7684;&#x57FA;&#x672C;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;&#x540D;&#x79F0;&#xFF0C;&#x63CF;&#x8FF0;&#xFF0C;&#x4EE5;&#x53CA;toString/fromString&#x4E24;&#x4E2A;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#xFF0C;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x503C;&#x7531;&#x7EE7;&#x627F;&#x7C7B;&#x5B9E;&#x73B0;&#x3002;</p>
+<p><code>ConfigVar</code>: &#x914D;&#x7F6E;&#x53C2;&#x6570;&#x7C7B;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x7C7B;&#xFF0C;&#x6709;&#x4E09;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x7C7B;&#x578B;T&#xFF0C;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x662F;FromStr&#x548C;ToStr&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x662F;&#x4EFF;&#x51FD;&#x6570;&#xFF0C;&#x5171;&#x4E2D;FromStr&#x7528;&#x4E8E;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x7C7B;&#x578B;T&#xFF0C;ToStr&#x7528;&#x4E8E;&#x5C06;T&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x4EFF;&#x51FD;&#x6570;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6A21;&#x677F;&#x7C7B;&#x548C;&#x4E0D;&#x540C;&#x7684;&#x7247;&#x7279;&#x5316;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x3002;ConfigVar&#x7C7B;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;T&#x7C7B;&#x578B;&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x503C;&#x6210;&#x5458;&#x548C;&#x4E00;&#x4E2A;&#x53D8;&#x66F4;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x4EE5;&#x53CA;toString/fromString&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x3002;toString/fromString&#x7528;&#x5230;&#x4E86;&#x6A21;&#x677F;&#x53C2;&#x6570;toStr/fromStr&#x3002;&#x6B64;&#x5916;&#xFF0C;ConfigVar&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;setValue/getValue&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;/&#x4FEE;&#x6539;&#x503C;&#xFF0C;&#x5E76;&#x89E6;&#x53D1;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x4EE5;&#x53CA;addListener/delListener&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<p><code>Config</code>: ConfigVar&#x7684;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;&#x8D1F;&#x8D23;&#x6258;&#x7BA1;&#x5168;&#x90E8;&#x7684;ConfigVar&#x5BF9;&#x8C61;&#x3002;&#x63D0;&#x4F9B;Lookup&#x65B9;&#x6CD5;&#xFF0C;&#x6839;&#x636E;&#x53C2;&#x6570;&#x540D;&#x79F0;&#x67E5;&#x8BE2;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x8C03;&#x7528;Lookup&#x67E5;&#x8BE2;&#x65F6;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x4E86;&#x9ED8;&#x8BA4;&#x503C;&#x548C;&#x914D;&#x7F6E;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x672A;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x914D;&#x7F6E;&#x65F6;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4FDD;&#x8BC1;&#x4E86;&#x914D;&#x7F6E;&#x6A21;&#x5757;&#x5B9A;&#x4E49;&#x5373;&#x53EF;&#x7528;&#x7684;&#x7279;&#x6027;&#x3002;&#x9664;&#x6B64;&#x5916;&#xFF0C;Config&#x7C7B;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;LoadFromYaml&#x548C;LoadFromConfDir&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x4ECE;YAML&#x7ED3;&#x70B9;&#x6216;&#x4ECE;&#x547D;&#x4EE4;&#x884C;-c&#x9009;&#x9879;&#x6307;&#x5B9A;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x4E2D;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x3002;Config&#x7684;&#x5168;&#x90E8;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x65B9;&#x6CD5;&#x90FD;&#x662F;static&#x7C7B;&#x578B;&#xFF0C;&#x4FDD;&#x8BC1;&#x4E86;&#x5168;&#x5C40;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</p>
+<h3 id="&#x7EBF;&#x7A0B;&#x6A21;&#x5757;">&#x7EBF;&#x7A0B;&#x6A21;&#x5757;</h3>
+<p>&#x7EBF;&#x7A0B;&#x6A21;&#x5757;&#xFF0C;&#x5C01;&#x88C5;&#x4E86;pthread&#x91CC;&#x9762;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x529F;&#x80FD;&#xFF0C;Thread,Semaphore,Mutex,RWMutex,Spinlock&#x7B49;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x4E2D;&#x5BF9;&#x7EBF;&#x7A0B;&#x65E5;&#x5E38;&#x4F7F;&#x7528;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x9002;&#x7528;c++11&#x91CC;&#x9762;&#x7684;thread &#x672C;&#x6846;&#x67B6;&#x662F;&#x4F7F;&#x7528;C++11&#x5F00;&#x53D1;&#xFF0C;&#x4E0D;&#x4F7F;&#x7528;thread&#xFF0C;&#x662F;&#x56E0;&#x4E3A;thread&#x5176;&#x5B9E;&#x4E5F;&#x662F;&#x57FA;&#x4E8E;pthread&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x5E76;&#x4E14;C++11&#x91CC;&#x9762;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x91CF;&#xFF0C;RWMutex&#xFF0C;Spinlock&#x7B49;&#xFF0C;&#x5728;&#x9AD8;&#x5E76;&#x53D1;&#x573A;&#x666F;&#xFF0C;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x662F;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x9009;&#x62E9;&#x4E86;&#x81EA;&#x5DF1;&#x5C01;&#x88C5;pthread&#x3002;</p>
+<p>&#x7EBF;&#x7A0B;&#x6A21;&#x5757;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#xFF1A;</p>
+<p><code>Thread</code>&#xFF1A;&#x7EBF;&#x7A0B;&#x7C7B;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x5165;&#x7EBF;&#x7A0B;&#x5165;&#x53E3;&#x51FD;&#x6570;&#x548C;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#xFF0C;&#x7EBF;&#x7A0B;&#x5165;&#x53E3;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#x4E3A;void()&#xFF0C;&#x5982;&#x679C;&#x5E26;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x7528;std::bind&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#x3002;&#x7EBF;&#x7A0B;&#x7C7B;&#x6784;&#x9020;&#x4E4B;&#x540E;&#x7EBF;&#x7A0B;&#x5373;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5728;&#x7EBF;&#x7A0B;&#x771F;&#x6B63;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7C7B;(&#x8FD9;&#x90E8;&#x5206;&#x88AB;&#x62C6;&#x5206;&#x5230;mutex.h)&#x4E2D;&#xFF1A;  </p>
+<p><code>Semaphore</code>: &#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;&#xFF0C;&#x57FA;&#x4E8E;sem_t&#x5B9E;&#x73B0;<br><code>Mutex</code>: &#x4E92;&#x65A5;&#x9501;&#xFF0C;&#x57FA;&#x4E8E;pthread_mutex_t&#x5B9E;&#x73B0;<br><code>RWMutex</code>: &#x8BFB;&#x5199;&#x9501;&#xFF0C;&#x57FA;&#x4E8E;pthread_rwlock_t&#x5B9E;&#x73B0;<br><code>Spinlock</code>: &#x81EA;&#x65CB;&#x9501;&#xFF0C;&#x57FA;&#x4E8E;pthread_spinlock_t&#x5B9E;&#x73B0;<br><code>CASLock</code>: &#x539F;&#x5B50;&#x9501;&#xFF0C;&#x57FA;&#x4E8E;std::atomic_flag&#x5B9E;&#x73B0;  </p>
+<p>&#x5F85;&#x6539;&#x8FDB;&#xFF1A;
+&#x7EBF;&#x7A0B;&#x53D6;&#x6D88;&#x53CA;&#x7EBF;&#x7A0B;&#x6E05;&#x7406;</p>
+<h3 id="&#x534F;&#x7A0B;&#x6A21;&#x5757;">&#x534F;&#x7A0B;&#x6A21;&#x5757;</h3>
+<p>&#x534F;&#x7A0B;&#xFF1A;&#x7528;&#x6237;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x66F4;&#x8F7B;&#x91CF;&#x7EA7;&#x3002;&#x540E;&#x7EED;&#x914D;&#x7F6E;socket hook&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x590D;&#x6742;&#x7684;&#x5F02;&#x6B65;&#x8C03;&#x7528;&#xFF0C;&#x5C01;&#x88C5;&#x6210;&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x3002;&#x964D;&#x4F4E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x7F16;&#x5199;&#x590D;&#x6742;&#x5EA6;&#x3002; &#x76EE;&#x524D;&#x8BE5;&#x534F;&#x7A0B;&#x662F;&#x57FA;&#x4E8E;ucontext_t&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x540E;&#x7EED;&#x5C06;&#x652F;&#x6301;&#x91C7;&#x7528;boost.context&#x91CC;&#x9762;&#x7684;fcontext_t&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x534F;&#x7A0B;&#x539F;&#x8BED;&#xFF1A;</p>
+<p><code>resume</code>&#xFF1A;&#x6062;&#x590D;&#xFF0C;&#x4F7F;&#x534F;&#x7A0B;&#x8FDB;&#x5165;&#x6267;&#x884C;&#x72B6;&#x6001;<br><code>yield</code>: &#x8BA9;&#x51FA;&#xFF0C;&#x534F;&#x7A0B;&#x8BA9;&#x51FA;&#x6267;&#x884C;&#x6743;</p>
+<p>yield&#x548C;resume&#x662F;&#x540C;&#x6B65;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x7684;resume&#x5FC5;&#x7136;&#x5BF9;&#x5E94;&#x53E6;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x7684;yield&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#xFF0C;&#x5E76;&#x4E14;&#xFF0C;&#x4E00;&#x6761;&#x7EBF;&#x7A0B;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x662F;&#x6267;&#x884C;&#x72B6;&#x6001;&#x3002;</p>
+<h3 id="&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x5757;">&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x5757;</h3>
+<p>&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x7BA1;&#x7406;&#x534F;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;&#xFF0C;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x4E3A;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x652F;&#x6301;&#x534F;&#x7A0B;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#x5207;&#x6362;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x534F;&#x7A0B;&#x5728;&#x56FA;&#x5B9A;&#x7684;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x3002;&#x662F;&#x4E00;&#x4E2A;N-M&#x7684;&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x578B;&#xFF0C;N&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;M&#x4E2A;&#x534F;&#x7A0B;&#x3002;&#x91CD;&#x590D;&#x5229;&#x7528;&#x6BCF;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x9650;&#x5236;&#xFF1A;<br>&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;
+&#x6F5C;&#x5728;&#x95EE;&#x9898;&#xFF1A;<br>&#x8C03;&#x5EA6;&#x5668;&#x5728;idle&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x75AF;&#x72C2;&#x5360;&#x7528;CPU&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;&#x51E0;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x5C31;&#x4E00;&#x5B9A;&#x8981;&#x6709;&#x51E0;&#x4E2A;&#x7C7B;&#x4F3C;while(1)&#x8FD9;&#x6837;&#x7684;&#x534F;&#x7A0B;&#x53C2;&#x4E0E;&#x8C03;&#x5EA6;&#x3002;</p>
+<h3 id="io&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x5757;">IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x6A21;&#x5757;</h3>
+<p>&#x7EE7;&#x627F;&#x81EA;&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5C01;&#x88C5;&#x4E86;epoll&#xFF08;Linux&#xFF09;&#xFF0C;&#x652F;&#x6301;&#x6CE8;&#x518C;socket fd&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;&#x3002;&#x53EA;&#x652F;&#x6301;&#x8BFB;&#x5199;&#x4E8B;&#x4EF6;&#x3002;IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x89E3;&#x51B3;&#x4E86;&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x5728;idle&#x60C5;&#x51B5;&#x4E0B;CPU&#x5360;&#x7528;&#x7387;&#x9AD8;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x8C03;&#x5EA6;&#x5668;idle&#x65F6;&#xFF0C;&#x8C03;&#x5EA6;&#x5668;&#x4F1A;&#x963B;&#x585E;&#x5728;epoll_wait&#x4E0A;&#xFF0C;&#x5F53;IO&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x6216;&#x6DFB;&#x52A0;&#x4E86;&#x65B0;&#x8C03;&#x5EA6;&#x4EFB;&#x52A1;&#x65F6;&#x518D;&#x8FD4;&#x56DE;&#x3002;&#x901A;&#x8FC7;&#x4E00;&#x5BF9;pipe fd&#x6765;&#x5B9E;&#x73B0;&#x901A;&#x77E5;&#x8C03;&#x5EA6;&#x534F;&#x7A0B;&#x6709;&#x65B0;&#x4EFB;&#x52A1;&#x3002;</p>
+<h3 id="&#x5B9A;&#x65F6;&#x5668;&#x6A21;&#x5757;">&#x5B9A;&#x65F6;&#x5668;&#x6A21;&#x5757;</h3>
+<p>&#x5728;IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x4E4B;&#x4E0A;&#x518D;&#x589E;&#x52A0;&#x5B9A;&#x65F6;&#x5668;&#x8C03;&#x5EA6;&#x529F;&#x80FD;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x6307;&#x5B9A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x5B9A;&#x65F6;&#x7684;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#x662F;idle&#x534F;&#x7A0B;&#x7684;epoll_wait&#x8D85;&#x65F6;&#xFF0C;&#x5927;&#x4F53;&#x601D;&#x8DEF;&#x662F;&#x521B;&#x5EFA;&#x5B9A;&#x65F6;&#x5668;&#x65F6;&#x6307;&#x5B9A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x548C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x4EE5;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x52A0;&#x4E0A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x8BA1;&#x7B97;&#x51FA;&#x8D85;&#x65F6;&#x7684;&#x7EDD;&#x5BF9;&#x65F6;&#x95F4;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x6240;&#x6709;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#x6309;&#x8FD9;&#x4E2A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x70B9;&#x6392;&#x5E8F;&#xFF0C;&#x4ECE;&#x6700;&#x65E9;&#x7684;&#x65F6;&#x95F4;&#x70B9;&#x5F00;&#x59CB;&#x53D6;&#x51FA;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x4F5C;&#x4E3A;idle&#x534F;&#x7A0B;&#x7684;epoll_wait&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;epoll_wait&#x8D85;&#x65F6;&#x7ED3;&#x675F;&#x65F6;&#x628A;&#x6240;&#x6709;&#x5DF2;&#x8D85;&#x65F6;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#x6536;&#x96C6;&#x8D77;&#x6765;&#xFF0C;&#x6267;&#x884C;&#x5B83;&#x4EEC;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<p>jujimeizuo&#x7684;&#x5B9A;&#x65F6;&#x5668;&#x4EE5;gettimeofday()&#x6765;&#x83B7;&#x53D6;&#x7EDD;&#x5BF9;&#x65F6;&#x95F4;&#x70B9;&#x5E76;&#x5224;&#x65AD;&#x8D85;&#x65F6;&#xFF0C;&#x6240;&#x4EE5;&#x4F9D;&#x8D56;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x4E86;&#x6821;&#x65F6;&#xFF0C;&#x6BD4;&#x5982;NTP&#x65F6;&#x95F4;&#x540C;&#x6B65;&#xFF0C;&#x90A3;&#x8FD9;&#x5957;&#x5B9A;&#x65F6;&#x673A;&#x5236;&#x5C31;&#x5931;&#x6548;&#x4E86;&#x3002;jujimeizuo&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x8F83;&#x5C0F;&#x7684;&#x8D85;&#x65F6;&#x6B65;&#x957F;&#xFF0C;&#x6BD4;&#x5982;3&#x79D2;&#x949F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;epoll_wait&#x6700;&#x591A;3&#x79D2;&#x8D85;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6700;&#x8FD1;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x662F;10&#x79D2;&#x4EE5;&#x540E;&#xFF0C;&#x90A3;epoll_wait&#x9700;&#x8981;&#x8D85;&#x65F6;3&#x6B21;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x3002;&#x6BCF;&#x6B21;&#x8D85;&#x65F6;&#x4E4B;&#x540E;&#x9664;&#x4E86;&#x8981;&#x68C0;&#x67E5;&#x6709;&#x6CA1;&#x6709;&#x8981;&#x89E6;&#x53D1;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x8FD8;&#x987A;&#x4FBF;&#x68C0;&#x67E5;&#x4E00;&#x4E0B;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;&#x6709;&#x6CA1;&#x6709;&#x88AB;&#x5F80;&#x56DE;&#x8C03;&#x3002;&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;&#x5F80;&#x56DE;&#x8C03;&#x4E86;1&#x4E2A;&#x5C0F;&#x65F6;&#x4EE5;&#x4E0A;&#xFF0C;&#x90A3;&#x5C31;&#x89E6;&#x53D1;&#x5168;&#x90E8;&#x5B9A;&#x65F6;&#x5668;&#x3002;&#x4E2A;&#x4EBA;&#x611F;&#x89C9;&#x8FD9;&#x4E2A;&#x529E;&#x6CD5;&#x6709;&#x4E9B;&#x7C97;&#x7CD9;&#xFF0C;&#x5176;&#x5B9E;&#x53EA;&#x9700;&#x8981;&#x6362;&#x4E2A;&#x65F6;&#x95F4;&#x6E90;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x6821;&#x65F6;&#x95EE;&#x9898;&#xFF0C;&#x6362;&#x6210;clock_gettime(CLOCK_MONOTONIC_RAW)&#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x7684;&#x5355;&#x8C03;&#x65F6;&#x95F4;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E86;&#x3002;</p>
+<h3 id="hook&#x6A21;&#x5757;">Hook&#x6A21;&#x5757;</h3>
+<p>hook&#x7CFB;&#x7EDF;&#x5E95;&#x5C42;&#x548C;socket&#x76F8;&#x5173;&#x7684;API&#xFF0C;socket io&#x76F8;&#x5173;&#x7684;API&#xFF0C;&#x4EE5;&#x53CA;sleep&#x7CFB;&#x5217;&#x7684;API&#x3002;hook&#x7684;&#x5F00;&#x542F;&#x63A7;&#x5236;&#x662F;&#x7EBF;&#x7A0B;&#x7C92;&#x5EA6;&#x7684;&#x3002;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x9009;&#x62E9;&#x3002;&#x901A;&#x8FC7;hook&#x6A21;&#x5757;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x4E00;&#x4E9B;&#x4E0D;&#x5177;&#x5F02;&#x6B65;&#x529F;&#x80FD;&#x7684;API&#xFF0C;&#x5C55;&#x73B0;&#x51FA;&#x5F02;&#x6B65;&#x7684;&#x6027;&#x80FD;&#x3002;&#x5982;&#xFF08;mysql&#xFF09;</p>
+<p>hook&#x5B9E;&#x9645;&#x5C31;&#x662F;&#x628A;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;api&#x518D;&#x8FDB;&#x884C;&#x4E00;&#x5C42;&#x5C01;&#x88C5;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x5728;&#x6267;&#x884C;&#x771F;&#x6B63;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x3002;hook&#x7684;&#x76EE;&#x7684;&#x662F;&#x628A;socket io&#x76F8;&#x5173;&#x7684;api&#x90FD;&#x8F6C;&#x6210;&#x5F02;&#x6B65;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;hook&#x548C;io&#x8C03;&#x5EA6;&#x662F;&#x5BC6;&#x5207;&#x76F8;&#x5173;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;IO&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x90A3;hook&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x610F;&#x4E49;&#x3002;</p>
+<!-- 考虑IOManager要调度以下协程：  
+协程1：sleep(2) 睡眠两秒后返回  
+协程2：在scoket fd1上send 100k数据  
+协程3：在socket fd2上recv直到数据接收成功   
+
+在未hook的情况下，IOManager要调度上面的协程，流程是下面这样的：
+1. 调度协程1，协程阻塞在sleep上，等2秒后返回，这两秒内调度器是被协程1占用的，其他协程无法被调度。
+2. 调度协徎2，协程阻塞send 100k数据上，这个操作一般问题不大，因为send数据无论如何都要占用时间，但如果fd迟迟不可写，那send会阻塞直到套接字可写，同样，在阻塞期间，调度器也无法调度其他协程。
+3. 调度协程3，协程阻塞在recv上，这个操作要直到recv超时或是有数据时才返回，期间调度器也无法调度其他协程
+
+上面的调度流程最终总结起来就是，协程只能按顺序调度，一旦有一个协程阻塞住了，那整个调度器也就阻塞住了，其他的协程都无法执行。像这种一条路走到黑的方式其实并不是完全不可避免，以sleep为例，调度器完全可以在检测到协程sleep后，将协程yield以让出执行权，同时设置一个定时器，2秒后再将协程重新resume，这样，调度器就可以在这2秒期间调度其他的任务，同时还可以顺利的实现sleep 2秒后再执行的效果。send/recv与此类似，在完全实现hook后，IOManager的执行流程将变成下面的方式：  
+1. 调度协程1，检测到协程sleep，那么先添加一个2秒的定时器，回调函数是在调度器上继续调度本协程，接着协程yield，等定时器超时。
+2. 因为上一步协程1已经yield了，所以协徎2并不需要等2秒后才可以执行，而是立刻可以执行。同样，调度器检测到协程send，由于不知道fd是不是马上可写，所以先在IOManager上给fd注册一个写事件，回调函数是让当前协程resume并执行实际的send操作，然后当前协程yield，等可写事件发生。
+3. 上一步协徎2也yield了，可以马上调度协程3。协程3与协程2类似，也是给fd注册一个读事件，回调函数是让当前协程resume并继续recv，然后本协程yield，等事件发生。
+4. 等2秒超时后，执行定时器回调函数，将协程1 resume以便继续执行。
+5. 等协程2的fd可写，一旦可写，调用写事件回调函数将协程2 resume以便继续执行send。
+6. 等协程3的fd可读，一旦可读，调用回调函数将协程3 resume以便继续执行recv。
+
+上面的4、5、6步都是异常的，系统并不会阻塞，IOManager仍然可以调度其他的任务，只在相关的事件发生后，再继续执行对应的任务即可。并且，由于hook的函数对调用方是不可知的，调用方也不需要知道hook的细节，所以对调用方也很方便，只需要以同步的方式编写代码，实现的效果却是异常执行的，效率很高。
+
+hook的重点是在替换api的底层实现的同时完全模拟其原本的行为，因为调用方是不知道hook的细节的，在调用被hook的api时，如果其行为与原本的行为不一致，就会给调用方造成困惑。比如，所有的socket fd在进行io调度时都会被设置成NONBLOCK模式，如果用户未显式地对fd设置NONBLOCK，那就要处理好fcntl，不要对用户暴露fd已经是NONBLOCK的事实，这点也说明，除了io相关的函数要进行hook外，对fcntl, setsockopt之类的功能函数也要进行hook，才能保证api的一致性。
+
+对以下函数进行了hook，并且只对socket fd进行了hook，如果操作的不是socket fd，那会直接调用系统原本的api，而不是hook之后的api：  
+
+```cpp
+sleep
+usleep
+nanosleep
+socket
+connect
+accept
+read
+readv
+recv
+recvfrom
+recvmsg
+write
+writev
+send
+sendto
+sendmsg
+close
+fcntl
+ioctl
+getsockopt
+setsockopt
+``` -->
+<h3 id="address&#x6A21;&#x5757;">Address&#x6A21;&#x5757;</h3>
+<p>&#x6574;&#x4E2A;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x4EFB;&#x4F55;&#x5F62;&#x5F0F;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5305;&#x62EC;IPv4&#x3001;IPv6&#x3001;Unix&#x548C;&#x672A;&#x77E5;&#x7684;Unknown&#x5730;&#x5740;&#xFF0C;&#x6CA1;&#x6709;&#x9488;&#x5BF9;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5730;&#x5740;&#x90FD;&#x5236;&#x5B9A;&#x4E00;&#x5957;&#x5BF9;&#x5E94;&#x7684;API&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x662F;&#x62DF;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x5957;&#x63A5;&#x5B57;&#x5730;&#x5740;&#x7ED3;&#x6784;sockaddr&#xFF0C;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x6240;&#x4EE5;&#x7684;&#x5957;&#x63A5;&#x5B57;API&#x5728;&#x4F20;&#x5165;&#x5730;&#x5740;&#x53C2;&#x6570;&#x65F6;&#x90FD;&#x53EA;&#x9700;&#x8981;&#x4F20;&#x5165;sockaddr&#x7C7B;&#x578B;&#xFF0C;&#x4FDD;&#x8BC1;&#x63A5;&#x53E3;&#x7684;&#x901A;&#x7528;&#x6027;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x7CFB;&#x5217;&#x8868;&#x793A;&#x5177;&#x4F53;&#x7684;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x8FD9;&#x4E9B;&#x5177;&#x4F53;&#x7684;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x7ED3;&#x6784;&#x7528;&#x4E8E;&#x7528;&#x6237;&#x8D4B;&#x503C;&#xFF0C;&#x4F46;&#x5728;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x90FD;&#x8981;&#x8F6C;&#x5316;&#x6210;sockaddr&#x7684;&#x5F62;&#x5F0F;&#x3002;</p>
+<h3 id="socket&#x6A21;&#x5757;">Socket&#x6A21;&#x5757;</h3>
+<p>&#x5C01;&#x88C5;&#x4E86;Socket&#x7C7B;&#xFF0C;&#x63D0;&#x4F9B;&#x6240;&#x6709;socket API&#x529F;&#x80FD;&#xFF0C;&#x7EDF;&#x4E00;&#x5C01;&#x88C5;&#x4E86;&#x5730;&#x5740;&#x7C7B;&#xFF0C;&#x5C06;IPv4&#xFF0C;IPv6&#xFF0C;Unix&#x5730;&#x5740;&#x7EDF;&#x4E00;&#x8D77;&#x6765;&#x3002;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x57DF;&#x540D;&#xFF0C;IP&#x89E3;&#x6790;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="bytearray&#x6A21;&#x5757;">ByteArray&#x6A21;&#x5757;</h3>
+<p>ByteArray&#x4E8C;&#x8FDB;&#x5236;&#x5E8F;&#x5217;&#x5316;&#x6A21;&#x5757;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7684;&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x3002;&#x8BFB;&#x5199;&#x5165;&#x57FA;&#x7840;&#x7C7B;&#x578B;int8_t,int16_t,int32_t,int64_t&#x7B49;&#xFF0C;&#x652F;&#x6301;Varint,std::string&#x7684;&#x8BFB;&#x5199;&#x652F;&#x6301;,&#x652F;&#x6301;&#x5B57;&#x8282;&#x5E8F;&#x8F6C;&#x5316;,&#x652F;&#x6301;&#x5E8F;&#x5217;&#x5316;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x4ECE;&#x6587;&#x4EF6;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7B49;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="stream&#x6A21;&#x5757;">Stream&#x6A21;&#x5757;</h3>
+<p>&#x5C01;&#x88C5;&#x6D41;&#x5F0F;&#x7684;&#x7EDF;&#x4E00;&#x63A5;&#x53E3;&#x3002;&#x5C06;&#x6587;&#x4EF6;&#xFF0C;socket&#x5C01;&#x88C5;&#x6210;&#x7EDF;&#x4E00;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x91C7;&#x7528;&#x7EDF;&#x4E00;&#x7684;&#x98CE;&#x683C;&#x64CD;&#x4F5C;&#x3002;&#x57FA;&#x4E8E;&#x7EDF;&#x4E00;&#x7684;&#x98CE;&#x683C;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x6269;&#x5C55;&#x3002;</p>
+<h3 id="tcpserver&#x6A21;&#x5757;">TcpServer&#x6A21;&#x5757;</h3>
+<p>&#x57FA;&#x4E8E;Socket&#x7C7B;&#xFF0C;&#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;TcpServer&#x7684;&#x670D;&#x52A1;&#x5668;&#x7C7B;&#xFF0C;&#x63D0;&#x4F9B;&#x7B80;&#x5355;&#x7684;API&#xFF0C;&#x4F7F;&#x7528;&#x4FBF;&#x6377;&#xFF0C;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x7ED1;&#x5B9A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x542F;&#x52A8;&#x670D;&#x52A1;&#xFF0C;&#x76D1;&#x542C;&#x7AEF;&#x53E3;&#xFF0C;accept&#x8FDE;&#x63A5;&#xFF0C;&#x5904;&#x7406;socket&#x8FDE;&#x63A5;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5177;&#x4F53;&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x66F4;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x8BE5;&#x7C7B;&#x5C31;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x5B9E;&#x73B0;</p>
+<h3 id="http&#x6A21;&#x5757;">HTTP&#x6A21;&#x5757;</h3>
+<p>&#x91C7;&#x7528;Ragel&#xFF08;&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x6027;&#x80FD;&#x5AB2;&#x7F8E;&#x6C47;&#x7F16;&#xFF09;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;HTTP/1.1&#x7684;&#x7B80;&#x5355;&#x534F;&#x8BAE;&#x5B9E;&#x73B0;&#x548C;uri&#x7684;&#x89E3;&#x6790;&#x3002;&#x57FA;&#x4E8E;SocketStream&#x5B9E;&#x73B0;&#x4E86;HttpConnection(HTTP&#x7684;&#x5BA2;&#x6237;&#x7AEF;)&#x548C;HttpSession(HTTP&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x94FE;&#x63A5;)&#x3002;&#x57FA;&#x4E8E;TcpServer&#x5B9E;&#x73B0;&#x4E86;HttpServer&#x3002;&#x63D0;&#x4F9B;&#x4E86;&#x5B8C;&#x6574;&#x7684;HTTP&#x7684;&#x5BA2;&#x6237;&#x7AEF;API&#x8BF7;&#x6C42;&#x529F;&#x80FD;&#xFF0C;HTTP&#x57FA;&#x7840;API&#x670D;&#x52A1;&#x5668;&#x529F;&#x80FD;&#x3002;</p>
+
                         
                     </section>
                     
@@ -538,7 +894,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.2","depth":1,"next":{"title":"开始部署","level":"1.3","depth":1,"path":"getStarted/README.md","ref":"getStarted/README.md","articles":[{"title":"准备工作","level":"1.3.1","depth":2,"path":"getStarted/common/Prepare.md","ref":"getStarted/common/Prepare.md","articles":[]},{"title":"启动系统","level":"1.3.2","depth":2,"path":"getStarted/common/StartJUHPS.md","ref":"getStarted/common/StartJUHPS.md","articles":[]}]},"previous":{"title":"首页","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"neutral"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":false,"favicon":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","target":"_blank","title":"flexible-linkcard"},"logo":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"Welcome.md","mtime":"2023-01-27T12:42:18.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-11T13:37:43.126Z"},"basePath":".","book":{"language":""}})
+            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.2","depth":1,"next":{"title":"开始部署","level":"1.3","depth":1,"path":"getStarted/README.md","ref":"getStarted/README.md","articles":[{"title":"准备工作","level":"1.3.1","depth":2,"path":"getStarted/common/Prepare.md","ref":"getStarted/common/Prepare.md","articles":[]},{"title":"启动系统","level":"1.3.2","depth":2,"path":"getStarted/common/StartJUHPS.md","ref":"getStarted/common/StartJUHPS.md","articles":[]}]},"previous":{"title":"首页","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","favicon","-lunr","-search","search-pro","splitter","github","-copy-code-button","code","chapter-fold","theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/JUHPS"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/img/favicon.png","bookmark":"/img/favicon.png","appleTouch":"/img/favicon.png","appleTouchMore":{"120x120":"/img/favicon.png","180x180":"/img/favicon.png"}},"theme-hqbook":{"copyButtons":true,"copyLines":true,"dragSplitter":false,"favicon":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","flexible-linkcard":{"hrefUrl":"https://github.com/JUHPS/juhps-docs/","imgClass":"rect","imgSrc":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","target":"_blank","title":"flexible-linkcard"},"logo":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true","search-placeholder":"输入关键字搜索","hide-elements":[".summary .gitbook-link"]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://github.com/JUHPS/juhps-docs/blob/master/img/favicon.png?raw=true"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeHqbook":{"nav":[{}]}},"title":"High Performance Web Server manual","links":{"sidebar":{"GitHub":"http://github.com/JUHPS"},"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*","description":"The manual of High Performance Web Server"},"file":{"path":"Welcome.md","mtime":"2023-04-16T16:23:27.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-16T17:39:49.766Z"},"basePath":".","book":{"language":""}})
         });
     </script>
 </div>
