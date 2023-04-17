@@ -6,7 +6,7 @@ Centos 或 Ubuntu
 # 编译工具
 
 ```bash
-apt install cmake gcc g++ graphviz doxygen
+apt install cmake gcc g++
 ```
 
 # 依赖库
@@ -32,21 +32,4 @@ make & make install
 
 ```bash
 apt-get install libssl-dev
-```
-
-## Apache ab测试工具
-
-```bash
-apt install apache2-utils
-```
-
-## WebBench
-
-```bash
-apt install?exuberant-ctags
-wget http://home.tiscali.cz/~cz210552/distfiles/webbench-1.5.tar.gz
-tar zxvf webbench-1.5.tar.gz 
-cd webbench-1.5/
-make
-make install
 ```
