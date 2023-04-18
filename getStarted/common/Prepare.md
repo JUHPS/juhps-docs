@@ -20,7 +20,7 @@ apt install libboost-dev
 ## yaml-cpp库
 
 ```bash
-git clone git@github.com:jbeder/yaml-cpp.git
+git clone https://github.com/jbeder/yaml-cpp.git
 cd yaml-cpp
 mkdir build
 cd build
